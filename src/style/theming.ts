@@ -4,7 +4,7 @@ import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
 import * as colors from "./colors";
 import { baseFontSize, fontFamily } from "./typography";
 
-export const themeOptionsBLM: ThemeOptions = {
+export const themeOptions: ThemeOptions = {
   typography: {
     fontSize: baseFontSize,
     fontFamily: fontFamily,
@@ -16,7 +16,10 @@ export const themeOptionsBLM: ThemeOptions = {
     secondary: {
       main: colors.blmBlack,
     },
+    background: {
+      default: colors.blmWhite,
+    }
   },
 };
 
-export const themeBLM = createMuiTheme(themeOptionsBLM);
+export const theme = createMuiTheme(themeOptions);
