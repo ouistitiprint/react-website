@@ -1,12 +1,12 @@
 import * as artists from './artists';
 
 import original_kobebryant from "./images/artworks/kobebryant/original.jpg";
-import original_amandinegay from "./images/artworks/amandinegay/original.jpg";
-import original_camilleaumontcarnel from "./images/artworks/camilleaumontcarnel/original.jpg";
-import original_jaeadrianaparmer from "./images/artworks/jaeadrianaparmer/original.jpg";
+import original_amandinegay from "./images/artworks/amandinegay/original.png";
+import original_camilleaumontcarnel from "./images/artworks/camilleaumontcarnel/original.png";
+import original_jaeadrianaparmer from "./images/artworks/jaeadrianaparmer/original.png";
 import original_oluwaytoyinsalau from "./images/artworks/oluwaytoyinsalau/original.jpg";
-import original_blmstickers from "./images/artworks/blmstickers/original.jpg";
-import original_blmcards from "./images/artworks/blmcards/original.jpg";
+import original_blmstickers from "./images/artworks/blmstickers/original.png";
+import original_blmcards from "./images/artworks/blmcards/original.png";
 
 export interface IArtworksData {
     name: string,

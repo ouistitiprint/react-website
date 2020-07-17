@@ -21,7 +21,7 @@ export const priya: IArtistsData =
 
 export const johari: IArtistsData =
 {
-    name: "Johari Doe",
+    name: "Johari",
     description: "Hello, my name is Johari and I am a 19-year-old graphic designer from Atlanta, GA.",
     picture: pictureJohari,
     listSocial: [{
