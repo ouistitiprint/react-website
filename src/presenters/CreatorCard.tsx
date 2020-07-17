@@ -6,18 +6,15 @@ import * as colors from "../style/colors";
 import { IArtistsData } from "../data/artists";
 
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import CardActions from "@material-ui/core/CardActions";
-import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import IconButton from "@material-ui/core/IconButton";
 import Instagram from '@material-ui/icons/Instagram';
 import Facebook from '@material-ui/icons/Facebook';
 import Pinterest from '@material-ui/icons/Pinterest';
-import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from "constants";
 
 // Size of the image in em
 const imgSize: number = 5;
@@ -66,8 +63,6 @@ export interface ICreatorCard {
     artist: IArtistsData,
 }
 
-const listSocialMedia: string[] = ['facebook', 'instagram', 'pinterest'];
-
 const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
     const classes = useStyles();
 
@@ -89,17 +84,17 @@ const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
                 </CardContent>
                 <CardActions>
                     {artist.listSocial.map((media) => {
-                        if (media.name == 'instagram') {
+                        if (media.name === 'instagram') {
                             return (
                                 <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Instagram fontSize="inherit" />
                                 </IconButton>);
-                        } else if(media.name == 'pinterest') {
+                        } else if(media.name === 'pinterest') {
                             return (
                                 <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Pinterest fontSize="inherit" />
                                 </IconButton>);
-                        } else if(media.name == 'facebook') {
+                        } else if(media.name === 'facebook') {
                             return (
                                 <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Facebook fontSize="inherit" />

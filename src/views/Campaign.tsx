@@ -4,8 +4,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { ICampaignData } from "../data/campaign";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
-import CreatorCard from "../presenters/CreatorCard";
-import Grid from "@material-ui/core/Grid/Grid";
 import CreatorDisplay from "../presenters/CreatorsDisplay";
 
 
