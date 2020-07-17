@@ -99,6 +99,8 @@ const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
                                 <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Facebook fontSize="inherit" />
                                 </IconButton>);
+                        } else {
+                            return (null);
                         }
                     })}
                 </CardActions>
