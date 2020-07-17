@@ -3,6 +3,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import * as colors from "../style/colors";
 
+import { IArtistsData } from "../data/artists";
+
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -27,6 +29,7 @@ const imgOverflow: number = 0.5;
 const useStyles = makeStyles({
     container: {
         paddingTop: (imgSize * imgOverflow).toString() + 'em',
+        margin: 0,
     },
     root: {
         maxWidth: 345,
@@ -60,15 +63,12 @@ const useStyles = makeStyles({
 });
 
 export interface ICreatorCard {
-    urlPicture: string;
-    name: string;
-    description: string;
-    listSocial: { name: string; url: string; }[];
+    artist: IArtistsData,
 }
 
 const listSocialMedia: string[] = ['facebook', 'instagram', 'pinterest'];
 
-const CreatorCard: React.FC<ICreatorCard> = ({ urlPicture, name, description, listSocial }) => {
+const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
     const classes = useStyles();
 
     return (
@@ -76,32 +76,32 @@ const CreatorCard: React.FC<ICreatorCard> = ({ urlPicture, name, description, li
             <Card className={classes.root}>
                 <CardMedia
                     className={classes.cardMedia}
-                    image={urlPicture}
-                    title={name + "'s Picture"}
+                    image={artist.picture}
+                    title={artist.name + "'s Picture"}
                 />
                 <CardContent className={classes.content}>
                     <Typography gutterBottom variant="h6" component="h2" align="center">
-                        {name}
+                        {artist.name}
                     </Typography>
                     <Typography variant="body1" component="p" align="center">
-                        {description}
+                        {artist.description}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    {listSocial.map((media) => {
+                    {artist.listSocial.map((media) => {
                         if (media.name == 'instagram') {
                             return (
-                                <IconButton aria-label={name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
+                                <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Instagram fontSize="inherit" />
                                 </IconButton>);
                         } else if(media.name == 'pinterest') {
                             return (
-                                <IconButton aria-label={name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
+                                <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Pinterest fontSize="inherit" />
                                 </IconButton>);
                         } else if(media.name == 'facebook') {
                             return (
-                                <IconButton aria-label={name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
+                                <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Facebook fontSize="inherit" />
                                 </IconButton>);
                         }
