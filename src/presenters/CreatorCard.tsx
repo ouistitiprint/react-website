@@ -31,7 +31,7 @@ const useStyles = makeStyles({
         paddingTop: (imgSize * imgOverflow).toString() + 'em',
         margin: 0,
     },
-    root: {
+    card: {
         maxWidth: 345,
         boxShadow: 'none',
         borderRadius: 0,
@@ -73,7 +73,7 @@ const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
 
     return (
         <Container className={classes.container} disableGutters>
-            <Card className={classes.root}>
+            <Card className={classes.card}>
                 <CardMedia
                     className={classes.cardMedia}
                     image={artist.picture}
