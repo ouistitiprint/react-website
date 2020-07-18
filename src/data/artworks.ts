@@ -5,8 +5,11 @@ import original_amandinegay from "./images/artworks/amandinegay/original.png";
 import original_camilleaumontcarnel from "./images/artworks/camilleaumontcarnel/original.png";
 import original_jaeadrianaparmer from "./images/artworks/jaeadrianaparmer/original.png";
 import original_oluwaytoyinsalau from "./images/artworks/oluwaytoyinsalau/original.jpg";
-import original_blmstickers from "./images/artworks/blmstickers/original.png";
-import original_blmcards from "./images/artworks/blmcards/original.png";
+import original_blmsticker01 from "./images/artworks/blmsticker01/original.png";
+import original_blmsticker02 from "./images/artworks/blmsticker02/original.png";
+import original_blmsticker03 from "./images/artworks/blmsticker03/original.png";
+import original_blmsticker04 from "./images/artworks/blmsticker04/original.png";
+import original_blmsticker05 from "./images/artworks/blmsticker05/original.png";
 
 export interface IArtworksData {
     name: string,
@@ -50,20 +53,40 @@ export const jaeAdrianaParmer: IArtworksData = {
     artist: artists.priya,
 }
 
-export const blmStickers: IArtworksData = {
-    name: "#BLM Stickers",
-    description: "Aliquam facilisis nisi metus, sed hendrerit mauris fermentum quis. Donec sed sapien sed lectus lacinia fringilla vitae nec dolor. Integer gravida odio at leo posuere, sed venenatis nunc finibus. Pellentesque porttitor facilisis tortor ut aliquam. Duis finibus suscipit tristique. Etiam commodo placerat feugiat. Aliquam ac consequat justo. Vivamus id suscipit magna. Donec elementum egestas magna in placerat. Curabitur pharetra dolor vitae orci imperdiet convallis. Morbi rutrum orci ac libero tincidunt commodo. Nam non leo maximus odio tristique condimentum et nec turpis. Suspendisse nec sodales lectus. Vivamus eget accumsan est.",
-    originalPicture: original_blmstickers,
+export const blmstiocker01: IArtworksData = {
+    name: "Sticker #1",
+    description: "Hear us.",
+    originalPicture: original_blmsticker01,
     artist: artists.priya,
 }
 
-export const blmCards: IArtworksData = {
-    name: "#BLM Cards",
-    description: "Aliquam facilisis nisi metus, sed hendrerit mauris fermentum quis. Donec sed sapien sed lectus lacinia fringilla vitae nec dolor. Integer gravida odio at leo posuere, sed venenatis nunc finibus. Pellentesque porttitor facilisis tortor ut aliquam. Duis finibus suscipit tristique. Etiam commodo placerat feugiat. Aliquam ac consequat justo. Vivamus id suscipit magna. Donec elementum egestas magna in placerat. Curabitur pharetra dolor vitae orci imperdiet convallis. Morbi rutrum orci ac libero tincidunt commodo. Nam non leo maximus odio tristique condimentum et nec turpis. Suspendisse nec sodales lectus. Vivamus eget accumsan est.",
-    originalPicture: original_blmcards,
+export const blmstiocker02: IArtworksData = {
+    name: "Sticker #2",
+    description: "Flower",
+    originalPicture: original_blmsticker02,
     artist: artists.priya,
 }
 
+export const blmstiocker03: IArtworksData = {
+    name: "Sticker #3",
+    description: "Black Lives Matter",
+    originalPicture: original_blmsticker03,
+    artist: artists.priya,
+}
+
+export const blmstiocker04: IArtworksData = {
+    name: "Sticker #4",
+    description: "Together",
+    originalPicture: original_blmsticker04,
+    artist: artists.priya,
+}
+
+export const blmstiocker05: IArtworksData = {
+    name: "Sticker #5",
+    description: "Be An Ally",
+    originalPicture: original_blmsticker05,
+    artist: artists.priya,
+}
 
 
 
