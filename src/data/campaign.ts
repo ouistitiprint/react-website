@@ -23,7 +23,7 @@ export interface ICampaignData {
 export const blm: ICampaignData =
     {
         name: "BLM Campaign",
-        title: "Black Lifes Matter",
+        title: "Black Lives Matter",
         subtitle: "Take Action. Support Black Lives Matter.",
         illustration: blm_illustration,
         foundation: {
