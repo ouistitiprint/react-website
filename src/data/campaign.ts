@@ -18,7 +18,7 @@ export interface ICampaignData {
     artists:artists.IArtistsData[],
 }
 
-export const campaignBLM: ICampaignData =
+export const blm: ICampaignData =
     {
         name: "BLM Campaign",
         title: "Black Lifes Matter",
