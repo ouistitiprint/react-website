@@ -5,6 +5,7 @@ import { ICampaignData } from "../data/campaign";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import CreatorDisplay from "../presenters/CreatorsDisplay";
+import CampaignDisplay from "../presenters/CampaignDisplay";
 
 
 const useStyles = makeStyles(theme => ({
@@ -27,6 +28,7 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
 
     return (
         <Container className={classes.root}>
+            <CampaignDisplay campaign={campaign}/>
             {/* --- Artists --- */}
             <Typography variant="h6" component="h2">
                 Artists
