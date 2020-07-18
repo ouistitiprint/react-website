@@ -5,6 +5,7 @@ import { MuiThemeProvider } from "@material-ui/core/styles";
 import * as campaign from "./data/campaign";
 
 import Campaign from "./views/Campaign";
+import Footer from "./presenters/Footer";
 import { theme } from "./style/theming";
 
 
@@ -13,5 +14,6 @@ export default () => (
   <MuiThemeProvider theme={theme}>
     <CssBaseline />
       <Campaign campaign={campaign.blm}/>
+      <Footer/>
   </MuiThemeProvider>
 );
