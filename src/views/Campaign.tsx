@@ -30,9 +30,23 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
         <Container className={classes.root}>
             <CampaignHeader logo={logo.gray} logoFoundation={campaign.foundation.logo} title={campaign.title} subtitle={campaign.subtitle}/>
             <CampaignDisplay campaign={campaign}/>
+            {/* --- Description --- */}
+            <Typography variant="h4" component="h2">
+                {"Campaign"}
+            </Typography>
+            <Typography variant="body1" component="p">
+                {campaign.description}
+            </Typography>
+            {/* --- Artworks --- */}
+            <Typography variant="h4" component="h2">
+                {"Perks"}
+            </Typography>
+            <Typography variant="body1" component="p">
+                {campaign.perksDescription}
+            </Typography>
             {/* --- Artists --- */}
             <Typography variant="h4" component="h2">
-                Artists
+                {"Artists"}
             </Typography>
             <CreatorDisplay artists={campaign.artists}/>
         </Container>
