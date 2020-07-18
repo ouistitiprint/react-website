@@ -24,12 +24,13 @@ const CampaignDisplay: React.FC<ICampaignDisplay> = ({ campaign }) => {
         <Container className={classes.root} disableGutters>
             <Grid container
                 >
-                <Grid item xs={8}>
+                <Grid item xs={12} sm={8}>
                     <Image
                         src={campaign.illustration}
-                        aspectRatio={(16/9)}/>
+                        aspectRatio={(16/9)}
+                        disableSpinner/>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={12} sm={4}>
                     <CampaignInfo campaign={campaign}/>
                 </Grid>
             </Grid>
