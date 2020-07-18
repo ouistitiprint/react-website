@@ -6,6 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import CreatorDisplay from "../presenters/CreatorsDisplay";
 import CampaignDisplay from "../presenters/CampaignDisplay";
+import CampaignHeader from "../presenters/CampaignHeader";
+
+import { logo } from "../data/images/platform/logo";
 
 
 const useStyles = makeStyles(theme => ({
@@ -14,9 +17,6 @@ const useStyles = makeStyles(theme => ({
       display: "flex",
       flexDirection: "column",
     },
-    artists: {
-        // flexGrow: 1,
-    }
 }));
 
 export interface ICampaign {
@@ -28,9 +28,10 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
 
     return (
         <Container className={classes.root}>
+            <CampaignHeader logo={logo.gray} logoFoundation={campaign.foundation.logo} title={campaign.title} subtitle={campaign.subtitle}/>
             <CampaignDisplay campaign={campaign}/>
             {/* --- Artists --- */}
-            <Typography variant="h6" component="h2">
+            <Typography variant="h4" component="h2">
                 Artists
             </Typography>
             <CreatorDisplay artists={campaign.artists}/>
