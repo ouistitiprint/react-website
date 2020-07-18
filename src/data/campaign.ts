@@ -1,4 +1,5 @@
-import logoBLM from './images/campaign/BLM_logo.png'; 
+import blm_logo from './images/campaign/blm_logo.png'; 
+import blm_illustration from './images/campaign/blm_illustration.png';
 import * as artists from './artists';
 import * as artworks from './artworks';
 
@@ -6,6 +7,7 @@ export interface ICampaignData {
     name: string,
     title: string,
     subtitle: string,
+    illustration: string,
     foundation: {
         name: string,
         website: string,
@@ -23,10 +25,11 @@ export const blm: ICampaignData =
         name: "BLM Campaign",
         title: "Black Lifes Matter",
         subtitle: "Take Action. Support Black Lives Matter.",
+        illustration: blm_illustration,
         foundation: {
             name: "Black Lives Matter",
             website: "https://blacklivesmatter.com/",
-            logo: logoBLM,
+            logo: blm_logo,
         },
         startDate: new Date(2020, 6, 1, 0, 0, 0, 0),
         endDate: new Date(2020, 6, 31, 23, 59, 59, 0),
