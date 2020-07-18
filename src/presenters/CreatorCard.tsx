@@ -23,13 +23,15 @@ const imgSize: number = 5;
 // of the card in percentage
 const imgOverflow: number = 0.5;
 
+const maxWidthCard: number = 345;
+
 const useStyles = makeStyles({
     container: {
+        maxWidth: maxWidthCard,
         paddingTop: (imgSize * imgOverflow).toString() + 'em',
-        margin: 0,
     },
     card: {
-        maxWidth: 345,
+        maxWidth: maxWidthCard,
         boxShadow: 'none',
         borderRadius: 0,
         border: '1px solid',
