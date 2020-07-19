@@ -9,7 +9,7 @@ import CreatorsDisplay from "./CreatorsDisplay";
 import * as artists from "../data/artists";
 
 const listArtists: artists.IArtistsData[] = [
-    artists.priya, artists.johari,
+    artists.priyaducommun, artists.joharistone,
 ]
 
 storiesOf("CreatorsDisplay", module)
