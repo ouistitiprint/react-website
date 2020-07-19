@@ -15,6 +15,6 @@ storiesOf("CreatorCard", module)
     </MuiThemeProvider>
   ))
 
-  .add("default", () => <CreatorCard artist={artists.johari}/>);
+  .add("default", () => <CreatorCard artist={artists.joharistone}/>);
 
   
