@@ -57,7 +57,7 @@ export const blm: ICampaignData =
             },
             {
                 perk: perks.stickers,
-                defaultArtwork: artworks.blmstiocker04,
+                defaultArtwork: artworks.blmstiocker01,
                 artworks:[artworks.blmstiocker01, artworks.blmstiocker02, artworks.blmstiocker03, artworks.blmstiocker04, artworks.blmstiocker05],
             },
             {
@@ -67,5 +67,5 @@ export const blm: ICampaignData =
             },
         ],
         artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay],
-        artists:[artists.priya, artists.johari],
+        artists:[artists.priyaducommun, artists.joharistone],
     };
