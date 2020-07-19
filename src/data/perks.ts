@@ -23,7 +23,7 @@ export const poster: IPerkData = {
 }
 
 export const stickers: IPerkData = {
-    name: "6x Stickers",
+    name: "5x Stickers",
     type: "stickers",
     description: "The perfect stickers to show your support.",
     price: 15,
