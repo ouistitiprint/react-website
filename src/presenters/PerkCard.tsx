@@ -61,7 +61,7 @@ const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout}) => {
 
                 <CardActions>
                     <Button onClick={() => clickCheckout()} size="large" variant="contained" color="primary" disableElevation fullWidth>
-                    {"Buy for " + perk.perk.price + "$"}
+                    {"Buy for " + perk.perk.calcTotalPrice(perk.perk) + "$"}
                     </Button>
                 </CardActions>
                 </Card>
