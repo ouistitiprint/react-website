@@ -1,11 +1,28 @@
 import * as artists from './artists';
 
 import original_kobebryant from "./images/artworks/kobebryant/original.jpg";
+import tote_kobebryant from "./images/artworks/kobebryant/tote.png";
+import poster_kobebryant from "./images/artworks/kobebryant/poster.png";
+
 import original_amandinegay from "./images/artworks/amandinegay/original.png";
+import tote_amandinegay from "./images/artworks/amandinegay/tote.png";
+import poster_amandinegay from "./images/artworks/amandinegay/poster.png";
+
 import original_camilleaumontcarnel from "./images/artworks/camilleaumontcarnel/original.png";
+import tote_camilleaumontcarnel from "./images/artworks/camilleaumontcarnel/tote.png";
+import poster_camilleaumontcarnel from "./images/artworks/camilleaumontcarnel/poster.png";
+
 import original_jaeadrianaparmer from "./images/artworks/jaeadrianaparmer/original.png";
+import tote_jaeadrianaparmer from "./images/artworks/jaeadrianaparmer/tote.png";
+import poster_jaeadrianaparmer from "./images/artworks/jaeadrianaparmer/poster.png";
+
 import original_oluwaytoyinsalau from "./images/artworks/oluwaytoyinsalau/original.jpg";
+import tote_oluwaytoyinsalau from "./images/artworks/oluwaytoyinsalau/tote.png";
+import poster_oluwaytoyinsalau from "./images/artworks/oluwaytoyinsalau/poster.png";
+
 import original_blmsticker01 from "./images/artworks/blmsticker01/original.png";
+import stickers_blmsticker01 from "./images/artworks/blmsticker01/stickers.png";
+
 import original_blmsticker02 from "./images/artworks/blmsticker02/original.png";
 import original_blmsticker03 from "./images/artworks/blmsticker03/original.png";
 import original_blmsticker04 from "./images/artworks/blmsticker04/original.png";
@@ -21,7 +38,7 @@ export interface IArtworksData {
         tote?: string,
         stickers?: string,
         cards?: string,
-    }
+    },
 }
 
 export const kobeBryant: IArtworksData = {
@@ -30,10 +47,9 @@ export const kobeBryant: IArtworksData = {
     originalPicture: original_kobebryant,
     artist: artists.johari,
     mockups:{
-        poster: original_kobebryant,
-        tote: original_kobebryant,
-        cards: original_kobebryant,
-    }
+        poster: poster_kobebryant,
+        tote: tote_kobebryant,
+    },
 }
 
 export const oluwaytoyinSalau: IArtworksData = {
@@ -42,10 +58,9 @@ export const oluwaytoyinSalau: IArtworksData = {
     originalPicture: original_oluwaytoyinsalau,
     artist: artists.johari,
     mockups:{
-        poster: original_oluwaytoyinsalau,
-        tote: original_oluwaytoyinsalau,
-        cards: original_oluwaytoyinsalau,
-    }
+        poster: poster_oluwaytoyinsalau,
+        tote: tote_oluwaytoyinsalau,
+    },
 }
 
 export const amandineGay: IArtworksData = {
@@ -54,10 +69,9 @@ export const amandineGay: IArtworksData = {
     originalPicture: original_amandinegay,
     artist: artists.priya,
     mockups:{
-        poster: original_amandinegay,
-        tote: original_amandinegay,
-        cards: original_amandinegay,
-    }
+        poster: poster_amandinegay,
+        tote: tote_amandinegay,
+    },
 }
 
 export const camilleAumontCarnel: IArtworksData = {
@@ -66,10 +80,9 @@ export const camilleAumontCarnel: IArtworksData = {
     originalPicture: original_camilleaumontcarnel,
     artist: artists.priya,
     mockups:{
-        poster: original_camilleaumontcarnel,
-        tote: original_camilleaumontcarnel,
-        cards: original_camilleaumontcarnel,
-    }
+        poster: poster_camilleaumontcarnel,
+        tote: tote_camilleaumontcarnel,
+    },
 }
 
 export const jaeAdrianaParmer: IArtworksData = {
@@ -78,10 +91,9 @@ export const jaeAdrianaParmer: IArtworksData = {
     originalPicture: original_jaeadrianaparmer,
     artist: artists.priya,
     mockups:{
-        poster: original_jaeadrianaparmer,
-        tote: original_jaeadrianaparmer,
-        cards: original_jaeadrianaparmer,
-    }
+        poster: poster_jaeadrianaparmer,
+        tote: tote_jaeadrianaparmer,
+    },
 }
 
 export const blmstiocker01: IArtworksData = {
@@ -90,9 +102,8 @@ export const blmstiocker01: IArtworksData = {
     originalPicture: original_blmsticker01,
     artist: artists.priya,
     mockups:{
-        stickers: original_blmsticker01,
-        cards: original_blmsticker01,
-    }
+        stickers: stickers_blmsticker01,
+    },
 }
 
 export const blmstiocker02: IArtworksData = {
@@ -100,10 +111,7 @@ export const blmstiocker02: IArtworksData = {
     description: "Flower",
     originalPicture: original_blmsticker02,
     artist: artists.priya,
-    mockups:{
-        stickers: original_blmsticker02,
-        cards: original_blmsticker02,
-    }
+    mockups:{},
 }
 
 export const blmstiocker03: IArtworksData = {
@@ -111,10 +119,7 @@ export const blmstiocker03: IArtworksData = {
     description: "Black Lives Matter",
     originalPicture: original_blmsticker03,
     artist: artists.priya,
-    mockups:{
-        stickers: original_blmsticker03,
-        cards: original_blmsticker03,
-    }
+    mockups:{},
 }
 
 export const blmstiocker04: IArtworksData = {
@@ -122,10 +127,7 @@ export const blmstiocker04: IArtworksData = {
     description: "Together",
     originalPicture: original_blmsticker04,
     artist: artists.priya,
-    mockups:{
-        stickers: original_blmsticker04,
-        cards: original_blmsticker04,
-    }
+    mockups:{},
 }
 
 export const blmstiocker05: IArtworksData = {
@@ -133,10 +135,7 @@ export const blmstiocker05: IArtworksData = {
     description: "Be An Ally",
     originalPicture: original_blmsticker05,
     artist: artists.priya,
-    mockups:{
-        stickers: original_blmsticker05,
-        cards: original_blmsticker05,
-    }
+    mockups:{},
 }
 
 
