@@ -8,7 +8,7 @@ export interface IArtistsData {
     listSocial:{ name: string; url: string; }[],
 }
 
-export const priya: IArtistsData =
+export const priyaducommun: IArtistsData =
     {
         name: "Priya Ducommun",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus tortor eget erat euismod feugiat non sit amet quam. Quisque vel nisl sit amet metus semper laoreet.",
@@ -19,10 +19,10 @@ export const priya: IArtistsData =
         }]
     };
 
-export const johari: IArtistsData =
+export const joharistone: IArtistsData =
 {
-    name: "Johari",
-    description: "Hello, my name is Johari and I am a 19-year-old graphic designer from Atlanta, GA.",
+    name: "Johari Stone",
+    description: "Hello, my name is Johari Stone and I am a 19-year-old graphic designer from Atlanta, GA.",
     picture: pictureJohari,
     listSocial: [{
         name: "instagram",
