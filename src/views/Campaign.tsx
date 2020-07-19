@@ -9,6 +9,7 @@ import CampaignDisplay from "../presenters/CampaignDisplay";
 import CampaignHeader from "../presenters/CampaignHeader";
 
 import { logo } from "../data/images/platform/logo";
+import PerksDisplay from "../presenters/PerksDisplay";
 
 
 const useStyles = makeStyles(theme => ({
@@ -44,6 +45,7 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
             <Typography variant="body1" component="p">
                 {campaign.perksDescription}
             </Typography>
+            <PerksDisplay perks={campaign.perks}/>
             {/* --- Artists --- */}
             <Typography variant="h4" component="h2">
                 {"Artists"}
