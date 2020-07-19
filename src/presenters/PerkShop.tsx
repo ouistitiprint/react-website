@@ -4,7 +4,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
 import { IPerkCampaign } from "../data/campaign";
-import { Grid, Typography } from "@material-ui/core";
+import { IPerkData } from "../data/perks";
+import { Grid, Typography, TableContainer, Table, Paper, TableBody, TableCell, TableRow } from "@material-ui/core";
 import Image from "material-ui-image";
 import { IArtworksData } from "../data/artworks";
 import StripeCheckoutBtn from "../payments/StripeCheckoutBtn";
@@ -28,6 +29,12 @@ const useStyles = makeStyles({
     perkSummaryTitle: {
 
     },
+    tableSummary: {
+        textTransform: "capitalize",
+    },
+    totalCell: {
+        fontWeight: "bold",
+    }
 });
 
 export interface IPerkShop {
@@ -41,7 +48,19 @@ const PerkShop: React.FC<IPerkShop> = ({ perk }) => {
     const getKeyValue = <U extends keyof T, T extends object>(
         key: U,
         obj: T
-    ) => obj[key]
+    ) => obj[key];
+
+    function createData(name: string, price: number) {
+        return { name, price };
+      };
+
+    function createSummary (perk: IPerkData) : {name: string, price: number}[] {
+        let keys: string[] = Object.keys(perk.value);
+        let prices: number[] = Object.values(perk.value);
+        
+        // return keys.map((item, i) => Object.assign({}, item, values[i]));
+        return keys.map((item, i) => createData(item, prices[i]));
+    }
 
     return (
         <Container className={classes.root} disableGutters>
@@ -55,7 +74,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk }) => {
                         </Grid>
                         <Grid item xs={2}>
                             <Typography variant="h4" component="h2" className={classes.perkPrice}>
-                                {perk.perk.price + '$'}
+                                {perk.perk.calcTotalPrice(perk.perk) + perk.perk.currencyCode}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -71,6 +90,26 @@ const PerkShop: React.FC<IPerkShop> = ({ perk }) => {
                     <Typography variant="h6" component="h3" className={classes.perkSummaryTitle}>
                         {"Summary"}
                     </Typography>
+                    <TableContainer component={Paper}>
+                        <Table className={classes.tableSummary} size="small" aria-label="Order summary">
+                            <TableBody>
+                            {createSummary(perk.perk).map((row) => (
+                                <TableRow key={row.name}>
+                                <TableCell component="th" scope="row">
+                                    {row.name}
+                                </TableCell>
+                                <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
+                                </TableRow>
+                            ))}
+                             <TableRow key={"total"}>
+                                <TableCell component="th" scope="row" className={classes.totalCell}>
+                                    {"total"}
+                                </TableCell>
+                                <TableCell align="right" className={classes.totalCell}>{perk.perk.calcTotalPrice(perk.perk) + perk.perk.currencyCode}</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                        </TableContainer>
                     <StripeCheckoutBtn priceApiId={getKeyValue<keyof IArtworksData["api"], IArtworksData["api"]>(perk.perk.type, perk.defaultArtwork.api) || ""}/>
                 </Grid>
             </Grid>
