@@ -31,9 +31,9 @@ export const stickers: IPerkData = {
 }
 
 export const cards: IPerkData = {
-    name: "11x Cards",
+    name: "Complete Collection",
     type: "cards",
-    description: "The smallest support but the only one with the complete collection of cards.",
+    description: "All the artworks of the campaign printed on high quality cards with a matte finish.",
     price: 8,
     groupArtworks: true,
 }
