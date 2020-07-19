@@ -24,7 +24,7 @@ const CreatorDisplay: React.FC<ICreatorDisplay> = ({ artists }) => {
             alignItems="flex-start" spacing={2}>
         {artists.map((artist) => {
             return (
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={4}>
                     <CreatorCard artist={artist}/>
                 </Grid>
             );
