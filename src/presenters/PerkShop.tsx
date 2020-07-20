@@ -117,21 +117,19 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                         direction="column"
                         justify="flex-start"
                         alignItems="stretch"
-                        spacing={1}>
+                        spacing={3}>
                             <Grid item>
-                            <Typography variant="h6" component="h3" className={classes.perkSummaryTitle}>
+                            <Typography variant="h6" component="h3" className={classes.perkSummaryTitle} gutterBottom>
                                 {"Choose Artwork"}
                             </Typography>
-                        </Grid>
-                        <Grid item>
+                        
                             <ArtworkButton artwork={selectedArtwork} handleClick={handleClick}/>
                         </Grid>
                         <Grid item>
-                            <Typography variant="h6" component="h3" className={classes.perkSummaryTitle}>
+                            <Typography variant="h6" component="h3" className={classes.perkSummaryTitle} gutterBottom>
                                 {"Summary"}
                             </Typography>
-                        </Grid>
-                        <Grid item>
+                        
                             <TableContainer component={Paper} className={classes.tableContainer}>
                                 <Table className={classes.tableSummary} size="small" aria-label="Order summary">
                                     <TableBody>
