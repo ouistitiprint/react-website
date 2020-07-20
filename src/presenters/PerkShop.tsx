@@ -14,6 +14,7 @@ import { theme } from "../style/theming";
 import Alert from '@material-ui/lab/Alert';
 import CheckIcon from '@material-ui/icons/Check';
 import PerkShopCard from "./PerkShopCard";
+import ArtworkButton from "../controls/ArtworkButton";
 
 const useStyles = makeStyles({
     alertDonation: {
@@ -98,21 +99,33 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
         setExpanded(expanded);
     };
 
+    const handleClick = () => {
+        console.log("You clicked a PerkCard");
+      };
+
     return (
         <Container disableGutters>
             <Alert icon={"✊"} severity="success" className={classes.alertDonation}>
                 {"Give " + perk.perk.value.donation + " " + perk.perk.currencyCode + " to " + foundation.name + " with your purchase!"}
             </Alert>
             <Grid container className={classes.gridShop} justify="space-between" spacing={3}>
-                <Grid item xs={12} sm={8} >
+                <Grid item xs={12} md={8}>
                     <PerkShopCard perk={perk.perk} artwork={selectedArtwork}/>
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} md={4}>
                     <Grid container
                         direction="column"
                         justify="flex-start"
                         alignItems="stretch"
                         spacing={1}>
+                            <Grid item>
+                            <Typography variant="h6" component="h3" className={classes.perkSummaryTitle}>
+                                {"Choose Artwork"}
+                            </Typography>
+                        </Grid>
+                        <Grid item>
+                            <ArtworkButton artwork={selectedArtwork} handleClick={handleClick}/>
+                        </Grid>
                         <Grid item>
                             <Typography variant="h6" component="h3" className={classes.perkSummaryTitle}>
                                 {"Summary"}
