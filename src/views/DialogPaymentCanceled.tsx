@@ -22,9 +22,9 @@ const useStyles = makeStyles(theme => ({
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & { children?: React.ReactElement },
     ref: React.Ref<unknown>,
-  ) {
+) {
     return <Slide direction="up" ref={ref} {...props} />;
-  });
+});
 
 export interface IDialogPaymentCanceled {
     showDialog: boolean,
@@ -37,22 +37,22 @@ const DialogPaymentCanceled: React.FC<IDialogPaymentCanceled> = ({ showDialog, c
     return (
         <Dialog onClose={() => closeDialog()} open={showDialog} TransitionComponent={Transition}>
             <DialogContent className={classes.dialogContent}>
-                <Grid container 
-                direction="column"
-                justify="flex-start"
-                alignItems="center">
-                   <Grid item>
-                   <Typography variant="h2" component="h2" gutterBottom>
-                        {"Oh No!"}
+                <Grid container
+                    direction="column"
+                    justify="flex-start"
+                    alignItems="center">
+                    <Grid item>
+                        <Typography variant="h2" component="h2" gutterBottom>
+                            {"Oh No!"}
                         </Typography>
-                    </Grid> 
+                    </Grid>
                     <Grid item>
                         <Typography variant="body1" component="p" gutterBottom align={"center"}>
-                        {"Your payment was canceled. Please try again. If the problem persists, don't hesitate to "}
-                        <Link href={"mailto:contact@vueng.ch"} color="inherit" underline={"always"}>
-                            {"contact us"}
-                        </Link>
-                        {"."}
+                            {"Your payment was canceled. Please try again. If the problem persists, don't hesitate to "}
+                            <Link href={"mailto:contact@vueng.ch"} color="inherit" underline={"always"}>
+                                {"contact us"}
+                            </Link>
+                            {"."}
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -61,7 +61,6 @@ const DialogPaymentCanceled: React.FC<IDialogPaymentCanceled> = ({ showDialog, c
                 </Grid>
             </DialogContent>
         </Dialog>
-
     );
 };
 

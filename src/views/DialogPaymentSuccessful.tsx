@@ -57,7 +57,6 @@ const DialogPaymentSuccessful: React.FC<IDialogPaymentSuccessful> = ({ showDialo
                 </Grid>
             </DialogContent>
         </Dialog>
-
     );
 };
 
