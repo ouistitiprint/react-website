@@ -3,16 +3,33 @@ import { loadStripe } from '@stripe/stripe-js';
 
 import * as orders from "../data/orders";
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
 const stripePromise = loadStripe(orders.stripePublishableKey);
+
+const useStyles = makeStyles({
+    stripeBtn: {
+        borderRadius: 0,
+    },
+    powerByStripe: {
+        textAlign: "justify",
+    },
+    stripeLink: {
+        fontWeight: "bold",
+    }
+});
 
 export interface IStripeCheckoutBtn {
     priceApiId: string,
 }
 
 const StripeCheckoutBtn: React.FC<IStripeCheckoutBtn> = ({ priceApiId }) => {
+    const classes = useStyles();
 
     const handleClick = async () => {
         const stripe = await stripePromise;
@@ -46,9 +63,18 @@ const StripeCheckoutBtn: React.FC<IStripeCheckoutBtn> = ({ priceApiId }) => {
     };
 
     return (
-        <Button role="link" onClick={handleClick} size="large" variant="contained" color="primary" disableElevation fullWidth>
+        <Container disableGutters>
+        <Button role="link" onClick={handleClick} size="large" variant="contained" color="primary" disableElevation fullWidth className={classes.stripeBtn}>
             Checkout
         </Button>
+        <Typography variant="body2" component="p" className={classes.powerByStripe}>
+                {"Payment and shipping address collection handled by "}
+                <Link href={"https://stripe.com/"} color="inherit" underline={"none"} className={classes.stripeLink}>
+                    {"stripe"}
+                </Link>
+                {"."}
+        </Typography>
+        </Container>
     );
 }
 
