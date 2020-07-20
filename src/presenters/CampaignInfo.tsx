@@ -5,14 +5,14 @@ import { ICampaignData } from "../data/campaign";
 
 import LinearProgress from "@material-ui/core/LinearProgress";
 import { Typography, Container, Button, Grid, Link } from "@material-ui/core";
-import { Instagram, Facebook, Twitter, LinkedIn, Mail } from '@material-ui/icons';
+import { Instagram, Facebook, Twitter, Mail } from '@material-ui/icons';
 import { theme } from "../style/theming";
 
 const useStyles = makeStyles({
     root: {
 
     },
-    linearProgressRoot:{
+    linearProgressRoot: {
         height: 12,
     },
     linearProgressColor: {
@@ -69,14 +69,14 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
             </Typography>
             {/* --- Artists --- */}
             <Typography variant="h2" component="p">
-            <Link href="#artists" color="inherit" underline={"none"}>
-                {campaign.artists.length}
-            </Link>
+                <Link href="#artists" color="inherit" underline={"none"}>
+                    {campaign.artists.length}
+                </Link>
             </Typography>
             <Typography variant="subtitle2" component="p">
                 {"artists"}
             </Typography>
-            
+
             <Button size="large" variant="contained" color="primary" className={classes.supportBtn} disableElevation href={'#perks'} fullWidth>
                 {"Support This Campaign"}
             </Button>
@@ -115,14 +115,6 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                         <Instagram />
                     </Button>
                 </Grid>
-                {/* <Grid item xs>
-                    <Button
-                        variant="outlined"
-                        color="secondary"
-                        className={classes.socialBtn}>
-                        <LinkedIn />
-                    </Button>
-                </Grid> */}
                 <Grid item xs={3}>
                     <Button
                         variant="outlined"
@@ -141,7 +133,6 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                 </Link>
                 {" to support their actions."}
             </Typography>
-
         </Container>
     );
 };
