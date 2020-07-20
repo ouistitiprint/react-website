@@ -19,12 +19,19 @@ const useStyles = makeStyles({
     },
     card: {
         maxWidth: 345,
+        boxShadow: 'none',
+        borderRadius: 0,
+        border: '1px solid',
+        borderColor: 'rgba(0, 0, 0, 0.125)',
     },
     media: {
         height: 345,
     },
     title:{
         textTransform: "capitalize",
+    },
+    buyBtn:{
+        borderRadius: 0,
     }
 });
 
@@ -60,8 +67,8 @@ const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout}) => {
                     </CardContent>
 
                 <CardActions>
-                    <Button onClick={() => clickCheckout()} size="large" variant="contained" color="primary" disableElevation fullWidth>
-                    {"Buy for " + perk.perk.calcTotalPrice(perk.perk) + " " + perk.perk.currencyCode}
+                    <Button onClick={() => clickCheckout()} size="large" variant="contained" color="primary" disableElevation fullWidth className={classes.buyBtn}>
+                    {"Support for " + perk.perk.calcTotalPrice(perk.perk) + " " + perk.perk.currencyCode}
                     </Button>
                 </CardActions>
                 </Card>
