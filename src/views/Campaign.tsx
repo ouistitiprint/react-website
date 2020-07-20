@@ -14,48 +14,57 @@ import PerksDisplay from "../presenters/PerksDisplay";
 
 const useStyles = makeStyles(theme => ({
     root: {
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
-      paddingTop: theme.spacing(5),
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        paddingTop: theme.spacing(5),
     },
+    campaignSection: {
+        marginTop: theme.spacing(3),
+    }
 }));
 
 export interface ICampaign {
     campaign: ICampaignData,
 };
 
-const Campaign: React.FC<ICampaign> = ({ campaign }) => { 
+const Campaign: React.FC<ICampaign> = ({ campaign }) => {
     const classes = useStyles();
 
     return (
         <Container className={classes.root}>
             {/* --- Campaign Header --- */}
-            <CampaignHeader logo={logo.gray} logoFoundation={campaign.foundation.logo} title={campaign.title} subtitle={campaign.subtitle}/>
+            <CampaignHeader logo={logo.gray} logoFoundation={campaign.foundation.logo} title={campaign.title} subtitle={campaign.subtitle} />
             {/* --- Campaign Display --- */}
-            <CampaignDisplay campaign={campaign}/>
+            <CampaignDisplay campaign={campaign} />
             {/* --- Description --- */}
-            <Typography variant="h4" component="h2">
-                {"Campaign"}
-            </Typography>
-            <Typography variant="body1" component="p">
-                {campaign.description}
-            </Typography>
-            {/* --- Artworks --- */}
-            <Typography variant="h4" component="h2">
-                {"Perks"}
-            </Typography>
-            <Typography variant="body1" component="p">
-                {campaign.perksDescription}
-            </Typography>
-            <PerksDisplay campaign={campaign}/>
+            <Container className={classes.campaignSection} disableGutters>
+                <Typography variant="h4" component="h2" gutterBottom>
+                    {"Campaign"}
+                </Typography>
+                <Typography variant="body1" component="p">
+                    {campaign.description}
+                </Typography>
+            </Container>
+            {/* --- Perks --- */}
+            <Container className={classes.campaignSection} disableGutters>
+                <Typography variant="h4" component="h2" gutterBottom>
+                    {"Perks"}
+                </Typography>
+                <Typography variant="body1" component="p" gutterBottom>
+                    {campaign.perksDescription}
+                </Typography>
+                <PerksDisplay campaign={campaign} />
+            </Container>
             {/* --- Artists --- */}
-            <Typography variant="h4" component="h2">
-                {"Artists"}
-            </Typography>
-            <CreatorDisplay artists={campaign.artists}/>
+            <Container className={classes.campaignSection} disableGutters>
+                <Typography variant="h4" component="h2" gutterBottom>
+                    {"Artists"}
+                </Typography>
+                <CreatorDisplay artists={campaign.artists} />
+            </Container>
         </Container>
-        
+
 
     );
 };
