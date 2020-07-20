@@ -23,15 +23,11 @@ const imgSize: number = 5;
 // of the card in percentage
 const imgOverflow: number = 0.5;
 
-const maxWidthCard: number = 345;
-
 const useStyles = makeStyles({
     container: {
-        // maxWidth: maxWidthCard,
         paddingTop: (imgSize * imgOverflow).toString() + 'em',
     },
     card: {
-        // maxWidth: maxWidthCard,
         boxShadow: 'none',
         borderRadius: 0,
         border: '1px solid',
@@ -95,12 +91,12 @@ const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
                                 <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Instagram fontSize="inherit" />
                                 </IconButton>);
-                        } else if(media.name === 'pinterest') {
+                        } else if (media.name === 'pinterest') {
                             return (
                                 <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Pinterest fontSize="inherit" />
                                 </IconButton>);
-                        } else if(media.name === 'facebook') {
+                        } else if (media.name === 'facebook') {
                             return (
                                 <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url}>
                                     <Facebook fontSize="inherit" />
