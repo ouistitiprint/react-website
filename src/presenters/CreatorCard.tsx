@@ -27,11 +27,11 @@ const maxWidthCard: number = 345;
 
 const useStyles = makeStyles({
     container: {
-        maxWidth: maxWidthCard,
+        // maxWidth: maxWidthCard,
         paddingTop: (imgSize * imgOverflow).toString() + 'em',
     },
     card: {
-        maxWidth: maxWidthCard,
+        // maxWidth: maxWidthCard,
         boxShadow: 'none',
         borderRadius: 0,
         border: '1px solid',
@@ -58,6 +58,10 @@ const useStyles = makeStyles({
         '&:hover': {
             background: colors.blmYellow,
         }
+    },
+    artistDescription: {
+        height: "4rem", // Only display 3 lines of text, not 4
+        overflow: "hidden",
     }
 });
 
@@ -80,7 +84,7 @@ const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
                     <Typography gutterBottom variant="h6" component="h2" align="center">
                         {artist.name}
                     </Typography>
-                    <Typography variant="body1" component="p" align="center">
+                    <Typography variant="body1" component="p" align="center" className={classes.artistDescription}>
                         {artist.description}
                     </Typography>
                 </CardContent>

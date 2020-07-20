@@ -18,7 +18,7 @@ const useStyles = makeStyles({
 
     },
     card: {
-        maxWidth: 345,
+        // maxWidth: 345,
         boxShadow: 'none',
         borderRadius: 0,
         border: '1px solid',
@@ -32,7 +32,11 @@ const useStyles = makeStyles({
     },
     buyBtn:{
         borderRadius: 0,
-    }
+    },
+    perkDescription: {
+        height: "2rem",
+        overflow: "hidden",
+    },
 });
 
 export interface IPerkCard {
@@ -61,7 +65,7 @@ const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout}) => {
                     <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
                         {perk.perk.name}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="p" className={classes.perkDescription}>
                         {perk.perk.description}
                     </Typography>
                     </CardContent>
