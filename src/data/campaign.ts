@@ -21,6 +21,7 @@ export interface ICampaignData {
 
 export interface IFoundationData {
     name: string,
+    officialName: string,
     website: string,
     logo: string,
 }
@@ -35,10 +36,11 @@ export const blm: ICampaignData =
     {
         name: "BLM Campaign",
         title: "Black Lives Matter",
-        subtitle: "Take Action. Support Black Lives Matter.",
+        subtitle: "Take Action. Support #BlackLivesMatter.",
         illustration: blm_illustration,
         foundation: {
-            name: "Black Lives Matter",
+            name: "#BlackLivesMatter",
+            officialName: "Black Lives Matter Foundation, Inc",
             website: "https://blacklivesmatter.com/",
             logo: blm_logo,
         },

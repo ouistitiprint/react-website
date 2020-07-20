@@ -130,9 +130,9 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                 </Grid>
             </Grid>
             <Typography variant="body1" component="p" className={classes.profitDisclaimer}>
-                {"All the profits from the sales will be sent to "}
+                {"All the profits from the sales will be sent to the "}
                 <Link className={classes.linkFondation} href={campaign.foundation.website} color="inherit">
-                    {campaign.foundation.name}
+                    {campaign.foundation.officialName}
                 </Link>
                 {" to support their actions."}
             </Typography>
