@@ -10,6 +10,15 @@ export const themeOptions: ThemeOptions = {
     fontSize: baseFontSize,
     fontFamily: fontFamily,
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   palette: {
     primary: {
       main: colors.blmYellow,

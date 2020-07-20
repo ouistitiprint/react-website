@@ -8,7 +8,7 @@ import DialogPerkShop from "../views/DialogPerkShop";
 
 const useStyles = makeStyles(theme => ({
     root: {
-// 
+
     },
 }));
 
@@ -38,7 +38,7 @@ const PerksDisplay: React.FC<IPerksDisplay> = ({ campaign }) => {
             alignItems="flex-start" spacing={2}>
         {perks.map((perk) => {
             return (
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={6} md={4}>
                     <PerkCard perk={perk} clickCheckout={() => handleClickCheckout(perk)}/>
                 </Grid>
             );
