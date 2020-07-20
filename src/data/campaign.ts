@@ -9,11 +9,7 @@ export interface ICampaignData {
     title: string,
     subtitle: string,
     illustration: string,
-    foundation: {
-        name: string,
-        website: string,
-        logo: string,
-    },
+    foundation: IFoundationData,
     startDate: Date,
     endDate: Date,
     description: string,
@@ -21,6 +17,12 @@ export interface ICampaignData {
     perks: IPerkCampaign[],
     artworks:artworks.IArtworksData[],
     artists:artists.IArtistsData[],
+}
+
+export interface IFoundationData {
+    name: string,
+    website: string,
+    logo: string,
 }
 
 export interface IPerkCampaign {
