@@ -1,18 +1,15 @@
-import React, { useState, ReactComponentElement } from "react";
+import React, { useState } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
 import { IPerkCampaign, IFoundationData } from "../data/campaign";
 import { IPerkData } from "../data/perks";
-import { Grid, Typography, TableContainer, Table, Paper, TableBody, TableCell, TableRow, Card, CardMedia, Chip, Accordion, AccordionSummary, AccordionDetails, CardHeader, Avatar } from "@material-ui/core";
-import Image from "material-ui-image";
+import { Grid, Typography, TableContainer, Table, Paper, TableBody, TableCell, TableRow, Card, Chip, CardHeader, Avatar } from "@material-ui/core";
 import { IArtworksData } from "../data/artworks";
 import StripeCheckoutBtn from "../payments/StripeCheckoutBtn";
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { theme } from "../style/theming";
 import Alert from '@material-ui/lab/Alert';
-import CheckIcon from '@material-ui/icons/Check';
 import PerkShopCard from "./PerkShopCard";
 import ArtworkButton from "../controls/ArtworkButton";
 import DialogArtworkSelector from "../views/DialogArtworkSelector";
@@ -68,7 +65,7 @@ const useStyles = makeStyles({
         borderRadius: 0,
         border: '0px solid',
     },
-    avatarArtworkSummary:{
+    avatarArtworkSummary: {
 
     }
 });
@@ -82,8 +79,6 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
     const classes = useStyles();
 
     const [selectedArtwork, setSelectedArtwork] = useState(perk.defaultArtwork);
-    // Control the expand of the artwork.
-    const [expanded, setExpanded] = useState(false);
     // Control the Artwork Selector
     const [showArtworkSelector, setShowArtworkSelector] = useState(false);
 
@@ -99,22 +94,12 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
 
     function createSummary(perk: IPerkData): { name: string, price: number }[] {
         let keys: string[] = Object.keys(perk.value);
-        keys.forEach(function (item, i) { if (item == "product") keys[i] = perk.name; });
+        keys.forEach(function (item, i) { if (item === "product") keys[i] = perk.name; });
         let prices: number[] = Object.values(perk.value);
 
         // return keys.map((item, i) => Object.assign({}, item, values[i]));
         return keys.map((item, i) => createData(item, prices[i]));
     }
-
-    const handleClick = () => {
-        console.log("You clicked a PerkCard");
-    };
-
-    const handleChange = (expanded: boolean) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
-        setExpanded(expanded);
-    };
-
-
 
     return (
         <Container disableGutters>
@@ -147,7 +132,6 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                                 <ArtworkButton artwork={selectedArtwork} handleClick={() => setShowArtworkSelector(true)} />
                             </Grid>
                         }
-
                         <Grid item>
                             <Typography variant="h6" component="h3" className={classes.perkSummaryTitle} gutterBottom>
                                 {"Summary"}
@@ -156,17 +140,15 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                             {perk.perk.groupArtworks
                                 ? null
                                 : <Card className={classes.artworkSummary}>
-                                <CardHeader
-                                  avatar={
-                                      <Avatar alt={selectedArtwork.name + "'s artwork"} variant={"square"} src={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, selectedArtwork.mockups) || selectedArtwork.originalPicture} className={classes.avatarArtworkSummary}/>
-                                  }
-                                  
-                                  title={selectedArtwork.name}
-                                  subheader={"by " + selectedArtwork.artist.name}
-                                />
+                                    <CardHeader
+                                        avatar={
+                                            <Avatar alt={selectedArtwork.name + "'s artwork"} variant={"square"} src={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, selectedArtwork.mockups) || selectedArtwork.originalPicture} className={classes.avatarArtworkSummary} />
+                                        }
+                                        title={selectedArtwork.name}
+                                        subheader={"by " + selectedArtwork.artist.name}
+                                    />
                                 </Card>
                             }
-
                             <TableContainer component={Paper} className={classes.tableContainer}>
                                 <Table className={classes.tableSummary} size="small" aria-label="Order summary">
                                     <TableBody>
@@ -203,7 +185,6 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                                                     </TableRow>
                                                 );
                                             }
-
                                         })}
                                         <TableRow key={"total"}>
                                             <TableCell component="th" scope="row" className={classes.totalCell}>
@@ -214,7 +195,6 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                                     </TableBody>
                                 </Table>
                             </TableContainer>
-
                         </Grid>
                         <Grid item>
                             <StripeCheckoutBtn priceApiId={getKeyValue<keyof IArtworksData["api"], IArtworksData["api"]>(perk.perk.type, selectedArtwork.api) || ""} />
