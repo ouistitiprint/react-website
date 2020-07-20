@@ -5,11 +5,12 @@ import Image from 'material-ui-image';
 import { ICampaignData } from "../data/campaign";
 import CampaignInfo from "./CampaignInfo";
 import { Container, Grid } from "@material-ui/core";
+import { theme } from "../style/theming";
 
 
 const useStyles = makeStyles({
     root :{
-
+        marginTop: theme.spacing(3),
     },
 });
 
@@ -23,6 +24,8 @@ const CampaignDisplay: React.FC<ICampaignDisplay> = ({ campaign }) => {
     return (
         <Container className={classes.root} disableGutters>
             <Grid container
+                spacing={2}
+                
                 >
                 <Grid item xs={12} sm={8}>
                     <Image
