@@ -25,7 +25,7 @@ export const tote: IPerkData = {
         shipping: 0,
         donation: 5,
     },
-    currencyCode: 'EUR',
+    currencyCode: '€',
     calcTotalPrice: getTotalPrice,
     groupArtworks: false,
 }
@@ -39,7 +39,7 @@ export const poster: IPerkData = {
         shipping: 0,
         donation: 10,
     },
-    currencyCode: 'EUR',
+    currencyCode: '€',
     calcTotalPrice: getTotalPrice,
     groupArtworks: false,
 }
@@ -53,7 +53,7 @@ export const stickers: IPerkData = {
         shipping: 0,
         donation: 3,
     },
-    currencyCode: 'EUR',
+    currencyCode: '€',
     calcTotalPrice: getTotalPrice,
     groupArtworks: true,
 }
@@ -67,7 +67,7 @@ export const cards: IPerkData = {
         shipping: 0,
         donation: 2,
     },
-    currencyCode: 'EUR',
+    currencyCode: '€',
     calcTotalPrice: getTotalPrice,
     groupArtworks: true,
 }
