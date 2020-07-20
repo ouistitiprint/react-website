@@ -1,4 +1,4 @@
-import blm_logo from './images/campaign/blm_logo.png'; 
+import blm_logo from './images/campaign/blm_logo2.png'; 
 import blm_illustration from './images/campaign/blm_illustration.png';
 import * as artists from './artists';
 import * as artworks from './artworks';
