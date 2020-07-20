@@ -8,7 +8,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import PerkShop from "../presenters/PerkShop";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
-import { Grid, Typography, Slide } from "@material-ui/core";
+import { Grid, Typography, Slide, Container } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
 
 const useStyles = makeStyles(theme => ({
@@ -39,6 +39,7 @@ const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, foundation, showShop,
     return (
         <Dialog onClose={() => setShowShop(false)} open={showShop} TransitionComponent={Transition} fullScreen>
             <DialogTitle disableTypography>
+                <Container disableGutters>
                 <Grid container
                     direction="row"
                     justify="space-between"
@@ -54,7 +55,7 @@ const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, foundation, showShop,
                         </IconButton>
                     </Grid>
                 </Grid>
-
+                </Container>
 
 
             </DialogTitle>
