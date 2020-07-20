@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/static/js/main.44c53cde.chunk.js",
-    "main.js.map": "/static/js/main.44c53cde.chunk.js.map",
+    "main.js": "/static/js/main.2267326c.chunk.js",
+    "main.js.map": "/static/js/main.2267326c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.39870823.js",
     "runtime-main.js.map": "/static/js/runtime-main.39870823.js.map",
-    "static/js/2.f50210b4.chunk.js": "/static/js/2.f50210b4.chunk.js",
-    "static/js/2.f50210b4.chunk.js.map": "/static/js/2.f50210b4.chunk.js.map",
+    "static/js/2.58599487.chunk.js": "/static/js/2.58599487.chunk.js",
+    "static/js/2.58599487.chunk.js.map": "/static/js/2.58599487.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.23a96137d02b5ac724ffd37bcde44f11.js": "/precache-manifest.23a96137d02b5ac724ffd37bcde44f11.js",
+    "precache-manifest.fc67f50eca1ddaaca08816c9a6ae0cf4.js": "/precache-manifest.fc67f50eca1ddaaca08816c9a6ae0cf4.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.f50210b4.chunk.js.LICENSE.txt": "/static/js/2.f50210b4.chunk.js.LICENSE.txt",
+    "static/js/2.58599487.chunk.js.LICENSE.txt": "/static/js/2.58599487.chunk.js.LICENSE.txt",
     "static/media/blm_logo2.png": "/static/media/blm_logo2.2352ba80.png",
     "static/media/original.png": "/static/media/original.93a2307d.png",
     "static/media/original.jpg": "/static/media/original.bcfdd343.jpg",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.39870823.js",
-    "static/js/2.f50210b4.chunk.js",
+    "static/js/2.58599487.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.44c53cde.chunk.js"
+    "static/js/main.2267326c.chunk.js"
   ]
 }
