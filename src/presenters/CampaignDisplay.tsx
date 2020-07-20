@@ -31,6 +31,7 @@ const CampaignDisplay: React.FC<ICampaignDisplay> = ({ campaign }) => {
                     <Image
                         src={campaign.illustration}
                         aspectRatio={(16/9)}
+                        animationDuration={0}
                         disableSpinner/>
                 </Grid>
                 <Grid item xs={12} md={4}>
