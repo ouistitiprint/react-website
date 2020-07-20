@@ -11,9 +11,6 @@ const useStyles = makeStyles({
         marginTop: theme.spacing(5),
         marginBottom: theme.spacing(2),
     },
-    link :{
-        color: 'rgba(0, 0, 0, 0.87)',
-    }
 });
 
 export interface IFooter {};
@@ -27,13 +24,13 @@ const Footer: React.FC<IFooter> = () => {
                 {"Ouistiti Print is a service by Vandroux Unlimited Engineering."}
             </Typography>
             <Typography variant="body2" component="p" gutterBottom>
-            <Link href={"https://www.facebook.com/ouistitiprint"} target="_blank" rel="noreferrer" className={classes.link}>{"Facebook"}</Link>
+            <Link href={"https://www.facebook.com/ouistitiprint"} target="_blank" rel="noreferrer"  color={"inherit"}>{"Facebook"}</Link>
             {" | "}
-            <Link href={"https://m.me/ouistitiprint"} target="_blank" rel="noreferrer" className={classes.link}>{"Messenger"}</Link>
+            <Link href={"https://m.me/ouistitiprint"} target="_blank" rel="noreferrer" color={"inherit"}>{"Messenger"}</Link>
             {" | "}
-            <Link href={"https://www.instagram.com/ouistitiprint/"} target="_blank" rel="noreferrer" className={classes.link}>{"Instagram"}</Link>
+            <Link href={"https://www.instagram.com/ouistitiprint/"} target="_blank" rel="noreferrer" color={"inherit"}>{"Instagram"}</Link>
             {" | "}
-            <Link href={"mailto:contact@vueng.ch"} className={classes.link}>{"Contact"}</Link>
+            <Link href={"mailto:contact@vueng.ch"} color={"inherit"}>{"Contact"}</Link>
             </Typography>
             <Typography variant="body2" component="p" gutterBottom>
                 {"© 2020 VU Engineering"}
