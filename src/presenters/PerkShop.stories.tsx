@@ -15,7 +15,7 @@ storiesOf("PerkShop", module)
     </MuiThemeProvider>
   ))
 
-  .add("poster", () => <PerkShop perk={campaign.blm.perks[0]}/>)
-  .add("tote", () => <PerkShop perk={campaign.blm.perks[1]}/>)
-  .add("stickers", () => <PerkShop perk={campaign.blm.perks[2]}/>)
-  .add("cards", () => <PerkShop perk={campaign.blm.perks[3]}/>);
+  .add("poster", () => <PerkShop perk={campaign.blm.perks[0]} foundation={campaign.blm.foundation}/>)
+  .add("tote", () => <PerkShop perk={campaign.blm.perks[1]} foundation={campaign.blm.foundation}/>)
+  .add("stickers", () => <PerkShop perk={campaign.blm.perks[2]} foundation={campaign.blm.foundation}/>)
+  .add("cards", () => <PerkShop perk={campaign.blm.perks[3]} foundation={campaign.blm.foundation}/>);

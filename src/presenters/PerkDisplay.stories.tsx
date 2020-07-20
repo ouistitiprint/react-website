@@ -8,7 +8,7 @@ import PerksDisplay from "./PerksDisplay";
 
 import * as campaign from "../data/campaign";
 
-const listPerks: campaign.IPerkCampaign[] = campaign.blm.perks
+// const listPerks: campaign.IPerkCampaign[] = campaign.blm.perks
 
 storiesOf("CreatorsDisplay", module)
   .addDecorator(story => (
@@ -17,4 +17,4 @@ storiesOf("CreatorsDisplay", module)
     </MuiThemeProvider>
   ))
 
-  .add("default", () => <PerksDisplay perks={listPerks}/>);
+  .add("default", () => <PerksDisplay campaign={campaign.blm}/>);

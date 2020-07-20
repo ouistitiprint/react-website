@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { IPerkCampaign } from "../data/campaign";
+import { IPerkCampaign, IFoundationData } from "../data/campaign";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -28,11 +28,12 @@ const Transition = React.forwardRef(function Transition(
 
 export interface IDialogPerkShop {
     perk: IPerkCampaign,
+    foundation: IFoundationData,
     showShop: boolean,
     setShowShop: Dispatch<SetStateAction<boolean>>;
 };
 
-const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, showShop, setShowShop }) => {
+const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, foundation, showShop, setShowShop }) => {
     const classes = useStyles();
 
     return (
@@ -58,7 +59,7 @@ const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, showShop, setShowShop
 
             </DialogTitle>
             <DialogContent dividers>
-                <PerkShop perk={perk} />
+                <PerkShop perk={perk}  foundation={foundation}/>
             </DialogContent>
         </Dialog>
 

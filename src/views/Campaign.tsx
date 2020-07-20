@@ -45,7 +45,7 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
             <Typography variant="body1" component="p">
                 {campaign.perksDescription}
             </Typography>
-            <PerksDisplay perks={campaign.perks}/>
+            <PerksDisplay campaign={campaign}/>
             {/* --- Artists --- */}
             <Typography variant="h4" component="h2">
                 {"Artists"}
