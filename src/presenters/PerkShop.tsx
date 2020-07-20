@@ -15,6 +15,7 @@ import Alert from '@material-ui/lab/Alert';
 import CheckIcon from '@material-ui/icons/Check';
 import PerkShopCard from "./PerkShopCard";
 import ArtworkButton from "../controls/ArtworkButton";
+import DialogArtworkSelector from "../views/DialogArtworkSelector";
 
 const useStyles = makeStyles({
     alertDonation: {
@@ -75,6 +76,8 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
     const [selectedArtwork, setSelectedArtwork] = useState(perk.defaultArtwork);
     // Control the expand of the artwork.
     const [expanded, setExpanded] = useState(false);
+    // Control the Artwork Selector
+    const [showArtworkSelector, setShowArtworkSelector] = useState(false);
 
     // To get the right mockup according to the perk type
     const getKeyValue = <U extends keyof T, T extends object>(
@@ -107,6 +110,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
 
     return (
         <Container disableGutters>
+            <DialogArtworkSelector artworks={perk.artworks} setSelectedArtwork={setSelectedArtwork} showSelector={showArtworkSelector} setShowSelector={setShowArtworkSelector}/>
             <Alert icon={"✊"} severity="success" className={classes.alertDonation}>
                 {"Give " + perk.perk.value.donation + " " + perk.perk.currencyCode + " to " + foundation.name + " with your purchase!"}
             </Alert>
@@ -128,7 +132,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                                     {"Choose Artwork"}
                                 </Typography>
 
-                                <ArtworkButton artwork={selectedArtwork} handleClick={handleClick} />
+                                <ArtworkButton artwork={selectedArtwork} handleClick={() => setShowArtworkSelector(true)} />
                             </Grid>}
 
                         <Grid item>
