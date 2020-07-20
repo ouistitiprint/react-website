@@ -5,7 +5,7 @@ import Container from "@material-ui/core/Container";
 
 import { IPerkCampaign, IFoundationData } from "../data/campaign";
 import { IPerkData } from "../data/perks";
-import { Grid, Typography, TableContainer, Table, Paper, TableBody, TableCell, TableRow, Card, CardMedia, Chip, Accordion, AccordionSummary, AccordionDetails } from "@material-ui/core";
+import { Grid, Typography, TableContainer, Table, Paper, TableBody, TableCell, TableRow, Card, CardMedia, Chip, Accordion, AccordionSummary, AccordionDetails, CardHeader, Avatar } from "@material-ui/core";
 import Image from "material-ui-image";
 import { IArtworksData } from "../data/artworks";
 import StripeCheckoutBtn from "../payments/StripeCheckoutBtn";
@@ -62,6 +62,14 @@ const useStyles = makeStyles({
     },
     img: {
         width: '300',
+    },
+    artworkSummary: {
+        boxShadow: 'none',
+        borderRadius: 0,
+        border: '0px solid',
+    },
+    avatarArtworkSummary:{
+
     }
 });
 
@@ -110,7 +118,11 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
 
     return (
         <Container disableGutters>
-            <DialogArtworkSelector artworks={perk.artworks} setSelectedArtwork={setSelectedArtwork} showSelector={showArtworkSelector} setShowSelector={setShowArtworkSelector}/>
+            {/* Prepare or not the Artwork Selector Dialog */}
+            {perk.perk.groupArtworks
+                ? null
+                : <DialogArtworkSelector artworks={perk.artworks} setSelectedArtwork={setSelectedArtwork} showSelector={showArtworkSelector} setShowSelector={setShowArtworkSelector} />
+            }
             <Alert icon={"✊"} severity="success" className={classes.alertDonation}>
                 {"Give " + perk.perk.value.donation + " " + perk.perk.currencyCode + " to " + foundation.name + " with your purchase!"}
             </Alert>
@@ -124,7 +136,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                         justify="flex-start"
                         alignItems="stretch"
                         spacing={3}>
-                            {/* Display or not the Artwork Selector */}
+                        {/* Display or not the Artwork Selector */}
                         {perk.perk.groupArtworks
                             ? null
                             : <Grid item>
@@ -133,12 +145,27 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                                 </Typography>
 
                                 <ArtworkButton artwork={selectedArtwork} handleClick={() => setShowArtworkSelector(true)} />
-                            </Grid>}
+                            </Grid>
+                        }
 
                         <Grid item>
                             <Typography variant="h6" component="h3" className={classes.perkSummaryTitle} gutterBottom>
                                 {"Summary"}
                             </Typography>
+
+                            {perk.perk.groupArtworks
+                                ? null
+                                : <Card className={classes.artworkSummary}>
+                                <CardHeader
+                                  avatar={
+                                      <Avatar alt={selectedArtwork.name + "'s artwork"} variant={"square"} src={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, selectedArtwork.mockups) || selectedArtwork.originalPicture} className={classes.avatarArtworkSummary}/>
+                                  }
+                                  
+                                  title={selectedArtwork.name}
+                                  subheader={"by " + selectedArtwork.artist.name}
+                                />
+                                </Card>
+                            }
 
                             <TableContainer component={Paper} className={classes.tableContainer}>
                                 <Table className={classes.tableSummary} size="small" aria-label="Order summary">
