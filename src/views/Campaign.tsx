@@ -47,7 +47,7 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
                 </Typography>
             </Container>
             {/* --- Perks --- */}
-            <Container className={classes.campaignSection} disableGutters>
+            <Container className={classes.campaignSection} id={"perks"} disableGutters>
                 <Typography variant="h4" component="h2" gutterBottom>
                     {"Perks"}
                 </Typography>
@@ -57,7 +57,7 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
                 <PerksDisplay campaign={campaign} />
             </Container>
             {/* --- Artists --- */}
-            <Container className={classes.campaignSection} disableGutters>
+            <Container className={classes.campaignSection} id={"artists"} disableGutters>
                 <Typography variant="h4" component="h2" gutterBottom>
                     {"Artists"}
                 </Typography>

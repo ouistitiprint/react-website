@@ -26,9 +26,6 @@ const useStyles = makeStyles({
     socialBtn: {
         borderRadius: 0,
     },
-    linkFondation: {
-        textDecorationLine: 'underline',
-    },
     profitDisclaimer: {
         marginTop: theme.spacing(1),
         textAlign: "justify",
@@ -63,19 +60,24 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                     root: classes.linearProgressRoot,
                     colorPrimary: classes.linearProgressColor,
                 }} />
+            {/* --- Days to go --- */}
             <Typography variant="h2" component="p">
                 {getRemainingDays(campaign.startDate, campaign.endDate)}
             </Typography>
             <Typography variant="subtitle2" component="p">
                 {"days to go"}
             </Typography>
+            {/* --- Artists --- */}
             <Typography variant="h2" component="p">
+            <Link href="#artists" color="inherit" underline={"none"}>
                 {campaign.artists.length}
+            </Link>
             </Typography>
             <Typography variant="subtitle2" component="p">
                 {"artists"}
             </Typography>
-            <Button size="large" variant="contained" color="primary" className={classes.supportBtn} disableElevation fullWidth>
+            
+            <Button size="large" variant="contained" color="primary" className={classes.supportBtn} disableElevation href={'#perks'} fullWidth>
                 {"Support This Campaign"}
             </Button>
             <Grid container
@@ -131,7 +133,7 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
             </Grid>
             <Typography variant="body1" component="p" className={classes.profitDisclaimer}>
                 {"All the profits from the sales will be sent to the "}
-                <Link className={classes.linkFondation} href={campaign.foundation.website} color="inherit">
+                <Link href={campaign.foundation.website} color="inherit" underline={"always"}>
                     {campaign.foundation.officialName}
                 </Link>
                 {" to support their actions."}
