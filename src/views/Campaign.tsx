@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import { ICampaignData } from "../data/campaign";
@@ -10,7 +10,9 @@ import CampaignHeader from "../presenters/CampaignHeader";
 
 import { logo } from "../data/images/platform/logo";
 import PerksDisplay from "../presenters/PerksDisplay";
-
+import { setQueryStringValue, getPaymentStatus } from "../helpers/queryString";
+import DialogPaymentSuccessful from "./DialogPaymentSuccessful";
+import DialogPaymentCanceled from "./DialogPaymentCanceled";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -31,8 +33,22 @@ export interface ICampaign {
 const Campaign: React.FC<ICampaign> = ({ campaign }) => {
     const classes = useStyles();
 
+    // Get the status for the address bar
+    const currentPaymentStatus = getPaymentStatus();
+    const [paymentStatus, setPaymentStatus] = useState(currentPaymentStatus);
+
+    useEffect(() => {
+        setQueryStringValue("status", paymentStatus);
+    }, [paymentStatus]);
+
     return (
         <Container className={classes.root}>
+            <DialogPaymentSuccessful
+                showDialog={paymentStatus === "paymentSuccessful"}
+                closeDialog={() => setPaymentStatus("shopping")} />
+            <DialogPaymentCanceled
+                showDialog={paymentStatus === "paymentCanceled"}
+                closeDialog={() => setPaymentStatus("shopping")} />
             {/* --- Campaign Header --- */}
             <CampaignHeader logo={logo.gray} logoFoundation={campaign.foundation.logo} title={campaign.title} subtitle={campaign.subtitle} />
             {/* --- Campaign Display --- */}
@@ -64,10 +80,7 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
                 <CreatorDisplay artists={campaign.artists} />
             </Container>
         </Container>
-
-
     );
 };
-
 
 export default Campaign;
