@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
       height: "100%",
       display: "flex",
       flexDirection: "column",
+      paddingTop: theme.spacing(5),
     },
 }));
 
@@ -29,7 +30,9 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
 
     return (
         <Container className={classes.root}>
+            {/* --- Campaign Header --- */}
             <CampaignHeader logo={logo.gray} logoFoundation={campaign.foundation.logo} title={campaign.title} subtitle={campaign.subtitle}/>
+            {/* --- Campaign Display --- */}
             <CampaignDisplay campaign={campaign}/>
             {/* --- Description --- */}
             <Typography variant="h4" component="h2">
