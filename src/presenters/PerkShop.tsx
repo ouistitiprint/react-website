@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     gridShop: {
         marginTop: theme.spacing(1),
     },
-    chipPerkName:{
+    chipPerkName: {
         borderRadius: 0,
     },
     perkName: {
@@ -88,20 +88,22 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
 
     function createSummary(perk: IPerkData): { name: string, price: number }[] {
         let keys: string[] = Object.keys(perk.value);
-        keys.forEach(function(item, i) { if (item == "product") keys[i] = perk.name;});
+        keys.forEach(function (item, i) { if (item == "product") keys[i] = perk.name; });
         let prices: number[] = Object.values(perk.value);
 
         // return keys.map((item, i) => Object.assign({}, item, values[i]));
         return keys.map((item, i) => createData(item, prices[i]));
     }
 
+    const handleClick = () => {
+        console.log("You clicked a PerkCard");
+    };
+
     const handleChange = (expanded: boolean) => (event: React.ChangeEvent<{}>, isExpanded: boolean) => {
         setExpanded(expanded);
     };
 
-    const handleClick = () => {
-        console.log("You clicked a PerkCard");
-      };
+
 
     return (
         <Container disableGutters>
@@ -110,7 +112,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
             </Alert>
             <Grid container className={classes.gridShop} justify="space-between" spacing={3}>
                 <Grid item xs={12} md={8}>
-                    <PerkShopCard perk={perk.perk} artwork={selectedArtwork}/>
+                    <PerkShopCard perk={perk.perk} artwork={selectedArtwork} />
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Grid container
@@ -118,18 +120,22 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                         justify="flex-start"
                         alignItems="stretch"
                         spacing={3}>
-                            <Grid item>
-                            <Typography variant="h6" component="h3" className={classes.perkSummaryTitle} gutterBottom>
-                                {"Choose Artwork"}
-                            </Typography>
-                        
-                            <ArtworkButton artwork={selectedArtwork} handleClick={handleClick}/>
-                        </Grid>
+                            {/* Display or not the Artwork Selector */}
+                        {perk.perk.groupArtworks
+                            ? null
+                            : <Grid item>
+                                <Typography variant="h6" component="h3" className={classes.perkSummaryTitle} gutterBottom>
+                                    {"Choose Artwork"}
+                                </Typography>
+
+                                <ArtworkButton artwork={selectedArtwork} handleClick={handleClick} />
+                            </Grid>}
+
                         <Grid item>
                             <Typography variant="h6" component="h3" className={classes.perkSummaryTitle} gutterBottom>
                                 {"Summary"}
                             </Typography>
-                        
+
                             <TableContainer component={Paper} className={classes.tableContainer}>
                                 <Table className={classes.tableSummary} size="small" aria-label="Order summary">
                                     <TableBody>
@@ -137,36 +143,36 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                                             if (row.price <= 0) {
                                                 return (
                                                     <TableRow key={row.name}>
-                                                    <TableCell component="th" scope="row">
-                                                        {row.name} 
-                                                        <Chip size="small" label={"Free"} className={classes.freeChip}/>
-                                                    </TableCell>
-                                                    <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
-                                                </TableRow>
+                                                        <TableCell component="th" scope="row">
+                                                            {row.name}
+                                                            <Chip size="small" label={"Free"} className={classes.freeChip} />
+                                                        </TableCell>
+                                                        <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
+                                                    </TableRow>
                                                 );
                                             } else if (row.name === "donation") {
                                                 return (
                                                     <TableRow key={row.name}>
-                                                    <TableCell component="th" scope="row">
-                                                        {row.name} 
-                                                    </TableCell>
-                                                    <TableCell align="right">
-                                                    <Chip size="small" label={"✊ " + row.price + perk.perk.currencyCode} className={classes.donationChip}/>
-                                                        
+                                                        <TableCell component="th" scope="row">
+                                                            {row.name}
                                                         </TableCell>
-                                                </TableRow>
+                                                        <TableCell align="right">
+                                                            <Chip size="small" label={"✊ " + row.price + perk.perk.currencyCode} className={classes.donationChip} />
+
+                                                        </TableCell>
+                                                    </TableRow>
                                                 );
                                             } else {
                                                 return (
                                                     <TableRow key={row.name}>
-                                                    <TableCell component="th" scope="row">
-                                                        {row.name} 
-                                                    </TableCell>
-                                                    <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
-                                                </TableRow>
+                                                        <TableCell component="th" scope="row">
+                                                            {row.name}
+                                                        </TableCell>
+                                                        <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
+                                                    </TableRow>
                                                 );
                                             }
-                                            
+
                                         })}
                                         <TableRow key={"total"}>
                                             <TableCell component="th" scope="row" className={classes.totalCell}>
