@@ -6,7 +6,7 @@ import CreatorCard from "./CreatorCard";
 
 const useStyles = makeStyles(theme => ({
     root: {
-// 
+        // marginTop: theme.spacing(3),
     },
 }));
 
