@@ -13,18 +13,16 @@ import { TransitionProps } from "@material-ui/core/transitions/transition";
 
 const useStyles = makeStyles(theme => ({
     root: {
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
+
     },
 }));
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & { children?: React.ReactElement },
     ref: React.Ref<unknown>,
-  ) {
+) {
     return <Slide direction="up" ref={ref} {...props} />;
-  });
+});
 
 export interface IDialogPerkShop {
     perk: IPerkCampaign,
@@ -37,33 +35,30 @@ const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, foundation, showShop,
     const classes = useStyles();
 
     return (
-        <Dialog onClose={() => setShowShop(false)} open={showShop} TransitionComponent={Transition} fullScreen>
+        <Dialog onClose={() => setShowShop(false)} open={showShop} TransitionComponent={Transition} fullScreen className={classes.root}>
             <DialogTitle disableTypography>
                 <Container disableGutters>
-                <Grid container
-                    direction="row"
-                    justify="space-between"
-                    alignItems="center">
-                    <Grid item xs={11}>
-                        <Typography variant="h4" component="h2">
-                            {"Checkout"}
-                        </Typography>
+                    <Grid container
+                        direction="row"
+                        justify="space-between"
+                        alignItems="center">
+                        <Grid item xs={11}>
+                            <Typography variant="h4" component="h2">
+                                {"Checkout"}
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={1}>
+                            <IconButton aria-label="close" onClick={() => setShowShop(false)}>
+                                <CloseIcon />
+                            </IconButton>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={1}>
-                        <IconButton aria-label="close" onClick={() => setShowShop(false)}>
-                            <CloseIcon />
-                        </IconButton>
-                    </Grid>
-                </Grid>
                 </Container>
-
-
             </DialogTitle>
             <DialogContent dividers>
-                <PerkShop perk={perk}  foundation={foundation}/>
+                <PerkShop perk={perk} foundation={foundation} />
             </DialogContent>
         </Dialog>
-
     );
 };
 
