@@ -47,7 +47,7 @@ const StripeCheckoutBtn: React.FC<IStripeCheckoutBtn> = ({ priceApiId }) => {
                 shippingAddressCollection: {
                     allowedCountries: orders.allowedCountries,
                 },
-                submitType: 'donate',
+                submitType: 'pay',
             })
                 .then(function (result) {
                     if (result.error) {
