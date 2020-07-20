@@ -42,8 +42,8 @@ const StripeCheckoutBtn: React.FC<IStripeCheckoutBtn> = ({ priceApiId }) => {
                 // a successful payment.
                 // Instead use one of the strategies described in
                 // https://stripe.com/docs/payments/checkout/fulfillment
-                successUrl: 'https://www.facebook.com/ouistitiprint/success',
-                cancelUrl: 'https://www.facebook.com/ouistitiprint/canceled',
+                successUrl: 'https://ouistitiprint.com/?status=paymentSuccessful',
+                cancelUrl: 'https://ouistitiprint.com/?status=paymentCanceled',
                 shippingAddressCollection: {
                     allowedCountries: orders.allowedCountries,
                 },
