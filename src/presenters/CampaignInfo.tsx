@@ -90,7 +90,8 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                         variant="outlined"
                         color="secondary"
                         className={classes.socialBtn}
-                        fullWidth>
+                        fullWidth
+                        href={"https://www.facebook.com"} target="_blank" rel="noreferrer">
                         <Facebook />
                     </Button>
                 </Grid>
@@ -99,7 +100,8 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                         variant="outlined"
                         color="secondary"
                         className={classes.socialBtn}
-                        fullWidth>
+                        fullWidth
+                        href={"https://www.twitter.com"} target="_blank" rel="noreferrer">
                         <Twitter />
                     </Button>
                 </Grid>
@@ -108,7 +110,8 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                         variant="outlined"
                         color="secondary"
                         className={classes.socialBtn}
-                        fullWidth>
+                        fullWidth
+                        href={"https://www.instagram.com"} target="_blank" rel="noreferrer">
                         <Instagram />
                     </Button>
                 </Grid>
@@ -126,7 +129,7 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                         color="secondary"
                         className={classes.socialBtn}
                         fullWidth
-                        >
+                        href={"mailto:?subject=Support " + campaign.foundation.name + "!&body=Visit https://ouistitiprint.com to support " + campaign.foundation.name + "!"}>
                         <Mail />
                     </Button>
                 </Grid>
