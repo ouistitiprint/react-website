@@ -17,7 +17,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { theme } from "../style/theming";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
-import { IPerkData } from "../data/perks";
+import { IPerkCampaign } from "../data/campaign";
 
 const useStyles = makeStyles({
     root: {
@@ -44,11 +44,11 @@ const useStyles = makeStyles({
         transform: 'rotate(0deg)',
         marginLeft: 'auto',
         transition: theme.transitions.create('transform', {
-          duration: theme.transitions.duration.shortest,
+            duration: theme.transitions.duration.shortest,
         }),
-      },
+    },
     expandOpen: {
-    transform: 'rotate(180deg)',
+        transform: 'rotate(180deg)',
     },
 
     containerCollapseInfo: {
@@ -60,17 +60,34 @@ const useStyles = makeStyles({
 });
 
 export interface IPerkShopCard {
-    perk: IPerkData,
+    perkCampaign: IPerkCampaign,
     artwork: IArtworksData,
 }
 
-const PerkShopCard: React.FC<IPerkShopCard> = ({ perk, artwork }) => {
+const PerkShopCard: React.FC<IPerkShopCard> = ({ perkCampaign, artwork }) => {
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
+
+    let perk = perkCampaign.perk;
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
     };
+
+    const extractArtistsName = (perkCampaign: IPerkCampaign) => {
+        // Extract all the name of the artists
+        let artists: string[] = perkCampaign.artworks.map((artwork) => (artwork.artist.name));
+
+        // Initialize an empty array to avoid having the type never
+        let emptyArray: string[] = [];
+        // Remove duplicates of artists
+        let uniqArtists = artists.reduce(function(a,b){
+            if (a.indexOf(b) < 0 ) a.push(b);
+            return a;
+          },emptyArray);
+        
+          return uniqArtists.join(', ');
+    }
 
     // To get the right mockup according to the perk type
     const getKeyValue = <U extends keyof T, T extends object>(
@@ -82,12 +99,22 @@ const PerkShopCard: React.FC<IPerkShopCard> = ({ perk, artwork }) => {
         <Container className={classes.root} disableGutters>
             <Card className={classes.card}>
                 <CardContent>
-                    <Chip size="small" label={perk.name} className={classes.chipPerkName} />
+                    {perk.groupArtworks
+                        ? null
+                        : <Chip size="small" label={perk.name} className={classes.chipPerkName} />
+                    }
                     <Typography variant="h5" component="h2">
-                        {artwork.name}
+                        {perk.groupArtworks
+                            ? perk.name
+                            : artwork.name
+                        }
                     </Typography>
                     <Typography variant="subtitle2" component="p">
-                        {"by " + artwork.artist.name}
+                        {"by "}
+                        {perk.groupArtworks
+                            ? extractArtistsName(perkCampaign)
+                            : artwork.artist.name
+                        }
                     </Typography>
                 </CardContent>
                 <CardMedia
@@ -111,11 +138,14 @@ const PerkShopCard: React.FC<IPerkShopCard> = ({ perk, artwork }) => {
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                     <CardContent className={classes.cardContentCollapseInfo}>
                         <Container className={classes.containerCollapseInfo} disableGutters>
-                    <Typography variant="body1" component="p">
-                        {artwork.description}
-                    </Typography>
-                    </Container>
-                    <Button size="small" onClick={handleExpandClick} fullWidth>Show Less</Button>
+                            <Typography variant="body1" component="p">
+                                {perkCampaign.groupDescription
+                                    ? perkCampaign.groupDescription
+                                    : artwork.description
+                                }
+                            </Typography>
+                        </Container>
+                        <Button size="small" onClick={handleExpandClick} fullWidth>Show Less</Button>
                     </CardContent>
                 </Collapse>
             </Card>

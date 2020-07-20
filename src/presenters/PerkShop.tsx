@@ -113,7 +113,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
             </Alert>
             <Grid container className={classes.gridShop} justify="space-between" spacing={3}>
                 <Grid item xs={12} md={8}>
-                    <PerkShopCard perk={perk.perk} artwork={selectedArtwork} />
+                    <PerkShopCard perkCampaign={perk} artwork={selectedArtwork} />
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <Grid container

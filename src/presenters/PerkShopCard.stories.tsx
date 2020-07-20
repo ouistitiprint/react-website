@@ -15,7 +15,7 @@ storiesOf("PerkShopCard", module)
     </MuiThemeProvider>
   ))
 
-  .add("poster", () => <PerkShopCard perk={campaign.blm.perks[0].perk} artwork={campaign.blm.perks[0].defaultArtwork}/>)
-  .add("tote", () => <PerkShopCard perk={campaign.blm.perks[1].perk} artwork={campaign.blm.perks[1].defaultArtwork}/>)
-  .add("stickers", () => <PerkShopCard perk={campaign.blm.perks[2].perk} artwork={campaign.blm.perks[2].defaultArtwork}/>)
-  .add("cards", () => <PerkShopCard perk={campaign.blm.perks[3].perk} artwork={campaign.blm.perks[3].defaultArtwork}/>);
+  .add("poster", () => <PerkShopCard perkCampaign={campaign.blm.perks[0]} artwork={campaign.blm.perks[0].defaultArtwork}/>)
+  .add("tote", () => <PerkShopCard perkCampaign={campaign.blm.perks[1]} artwork={campaign.blm.perks[1].defaultArtwork}/>)
+  .add("stickers", () => <PerkShopCard perkCampaign={campaign.blm.perks[2]} artwork={campaign.blm.perks[2].defaultArtwork}/>)
+  .add("cards", () => <PerkShopCard perkCampaign={campaign.blm.perks[3]} artwork={campaign.blm.perks[3].defaultArtwork}/>);
