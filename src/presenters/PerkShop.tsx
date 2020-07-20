@@ -217,7 +217,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
 
                         </Grid>
                         <Grid item>
-                            <StripeCheckoutBtn priceApiId={getKeyValue<keyof IArtworksData["api"], IArtworksData["api"]>(perk.perk.type, perk.defaultArtwork.api) || ""} />
+                            <StripeCheckoutBtn priceApiId={getKeyValue<keyof IArtworksData["api"], IArtworksData["api"]>(perk.perk.type, selectedArtwork.api) || ""} />
                         </Grid>
                     </Grid>
                 </Grid>
