@@ -12,6 +12,7 @@ import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 
 import { IArtworksData } from "../data/artworks";
+import CardActionArea from "@material-ui/core/CardActionArea";
 
 const useStyles = makeStyles({
     root: {
@@ -56,11 +57,13 @@ const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout}) => {
     return (
         <Container className={classes.root} disableGutters>
             <Card className={classes.card}>
+            <CardActionArea onClick={() => clickCheckout()}>
                     <CardMedia
                     className={classes.media}
                     image={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, perk.defaultArtwork.mockups) || perk.defaultArtwork.originalPicture}
                     title={perk.defaultArtwork.name + "'s " + perk.perk.name}
                     />
+            </CardActionArea>
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
                         {perk.perk.name}
