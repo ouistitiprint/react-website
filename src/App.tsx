@@ -1,12 +1,17 @@
 import * as React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { MuiThemeProvider } from "@material-ui/core/styles";
+import ReactGA from 'react-ga';
 
 import * as campaign from "./data/campaign";
 
 import Campaign from "./views/Campaign";
 import Footer from "./presenters/Footer";
 import { theme } from "./style/theming";
+
+// Initialize Google Analytics
+ReactGA.initialize('UA-165820072-1');
+ReactGA.pageview('/homepage');
 
 
 export default () => (
