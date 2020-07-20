@@ -30,6 +30,7 @@ export interface IPerkCampaign {
     perk: perks.IPerkData,
     defaultArtwork: artworks.IArtworksData,
     artworks: artworks.IArtworksData[],
+    groupDescription?: string,
 }
 
 export const blm: ICampaignData =
@@ -63,11 +64,13 @@ export const blm: ICampaignData =
                 perk: perks.stickers,
                 defaultArtwork: artworks.blmstiocker01,
                 artworks:[artworks.blmstiocker01, artworks.blmstiocker02, artworks.blmstiocker03, artworks.blmstiocker04, artworks.blmstiocker05],
+                groupDescription: "Five black stickers to put everywhere you want. The fight is everyday and everywhere."
             },
             {
                 perk: perks.cards,
                 defaultArtwork: artworks.amandineGay,
                 artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay,artworks.blmstiocker01, artworks.blmstiocker02, artworks.blmstiocker03, artworks.blmstiocker04, artworks.blmstiocker05],
+                groupDescription: "All the original portraits by Priya and Johari together with the stickers' artworks designed by Priya."
             },
         ],
         artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay],
