@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ReactComponentElement } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -13,6 +13,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { theme } from "../style/theming";
 import Alert from '@material-ui/lab/Alert';
 import CheckIcon from '@material-ui/icons/Check';
+import PerkShopCard from "./PerkShopCard";
 
 const useStyles = makeStyles({
     alertDonation: {
@@ -22,6 +23,9 @@ const useStyles = makeStyles({
     },
     gridShop: {
         marginTop: theme.spacing(1),
+    },
+    chipPerkName:{
+        borderRadius: 0,
     },
     perkName: {
 
@@ -45,6 +49,14 @@ const useStyles = makeStyles({
     },
     totalCell: {
         fontWeight: "bold",
+    },
+    freeChip: {
+        marginLeft: theme.spacing(1),
+    },
+    donationChip: {
+        color: "#ffffff",
+        backgroundColor: "#000000",
+        marginRight: -8,
     },
     img: {
         width: '300',
@@ -75,6 +87,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
 
     function createSummary(perk: IPerkData): { name: string, price: number }[] {
         let keys: string[] = Object.keys(perk.value);
+        keys.forEach(function(item, i) { if (item == "product") keys[i] = perk.name;});
         let prices: number[] = Object.values(perk.value);
 
         // return keys.map((item, i) => Object.assign({}, item, values[i]));
@@ -92,28 +105,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
             </Alert>
             <Grid container className={classes.gridShop} justify="space-between" spacing={3}>
                 <Grid item xs={12} sm={8} >
-                    <Grid container
-                        direction="column"
-                        justify="flex-start"
-                        alignItems="flex-start"
-                        spacing={1}>
-                        <Grid item xs>
-                            <Chip variant="outlined" size="small" label={perk.perk.name} />
-                            <Typography variant="h5" component="h2">
-                                {selectedArtwork.name}
-                            </Typography>
-                            <Typography variant="subtitle2" component="p">
-                                {"by " + selectedArtwork.artist.name}
-                            </Typography>
-                        </Grid>
-                        <Grid item xs>
-                            <Image
-                                src={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, perk.defaultArtwork.mockups) || perk.defaultArtwork.originalPicture}
-                                aspectRatio={(4 / 3)}
-                                style={{ minHeight: 300, minWidth: 300 }}
-                                animationDuration={0} />
-                        </Grid>
-                    </Grid>
+                    <PerkShopCard perk={perk.perk} artwork={selectedArtwork}/>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Grid container
@@ -130,14 +122,41 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                             <TableContainer component={Paper} className={classes.tableContainer}>
                                 <Table className={classes.tableSummary} size="small" aria-label="Order summary">
                                     <TableBody>
-                                        {createSummary(perk.perk).map((row) => (
-                                            <TableRow key={row.name}>
-                                                <TableCell component="th" scope="row">
-                                                    {row.name}
-                                                </TableCell>
-                                                <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
-                                            </TableRow>
-                                        ))}
+                                        {createSummary(perk.perk).map((row) => {
+                                            if (row.price <= 0) {
+                                                return (
+                                                    <TableRow key={row.name}>
+                                                    <TableCell component="th" scope="row">
+                                                        {row.name} 
+                                                        <Chip size="small" label={"Free"} className={classes.freeChip}/>
+                                                    </TableCell>
+                                                    <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
+                                                </TableRow>
+                                                );
+                                            } else if (row.name === "donation") {
+                                                return (
+                                                    <TableRow key={row.name}>
+                                                    <TableCell component="th" scope="row">
+                                                        {row.name} 
+                                                    </TableCell>
+                                                    <TableCell align="right">
+                                                    <Chip size="small" label={"✊ " + row.price + perk.perk.currencyCode} className={classes.donationChip}/>
+                                                        
+                                                        </TableCell>
+                                                </TableRow>
+                                                );
+                                            } else {
+                                                return (
+                                                    <TableRow key={row.name}>
+                                                    <TableCell component="th" scope="row">
+                                                        {row.name} 
+                                                    </TableCell>
+                                                    <TableCell align="right">{row.price + perk.perk.currencyCode}</TableCell>
+                                                </TableRow>
+                                                );
+                                            }
+                                            
+                                        })}
                                         <TableRow key={"total"}>
                                             <TableCell component="th" scope="row" className={classes.totalCell}>
                                                 {"total"}
