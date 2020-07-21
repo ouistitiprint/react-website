@@ -54,23 +54,25 @@ export const blm: ICampaignData =
                 perk: perks.poster,
                 defaultArtwork: artworks.camilleAumontCarnel,
                 artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay],
+                groupDescription: "Original portraits of impactful Black people on high quality A0 poster."
             },
             {
                 perk: perks.tote,
                 defaultArtwork: artworks.kobeBryant,
                 artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay],
+                groupDescription: "Original portraits of impactful Black people printed on textile tote bag."
             },
             {
                 perk: perks.stickers,
                 defaultArtwork: artworks.blmstiocker01,
                 artworks:[artworks.blmstiocker01, artworks.blmstiocker02, artworks.blmstiocker03, artworks.blmstiocker04, artworks.blmstiocker05],
-                groupDescription: "Five black stickers to put everywhere you want. The fight is everyday and everywhere."
+                groupDescription: "Recognizable visuals for Black Lives Matter turned into a set of five stickers designed by Priya Ducommun."
             },
             {
                 perk: perks.cards,
                 defaultArtwork: artworks.amandineGay,
                 artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay,artworks.blmstiocker01, artworks.blmstiocker02, artworks.blmstiocker03, artworks.blmstiocker04, artworks.blmstiocker05],
-                groupDescription: "All the original portraits by Priya and Johari together with the stickers' artworks designed by Priya."
+                groupDescription: "All the original artworks designed by Priya Ducommun and Johari Stone on high quality cards with a matte finish."
             },
         ],
         artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay],

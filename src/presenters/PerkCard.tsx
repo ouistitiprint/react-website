@@ -28,14 +28,14 @@ const useStyles = makeStyles({
     media: {
         height: 345,
     },
-    title:{
+    title: {
         textTransform: "capitalize",
     },
-    buyBtn:{
+    buyBtn: {
         borderRadius: 0,
     },
     perkDescription: {
-        height: "2rem",
+        height: "3rem",
         overflow: "hidden",
     },
 });
@@ -45,7 +45,7 @@ export interface IPerkCard {
     clickCheckout: () => void;
 }
 
-const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout}) => {
+const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout }) => {
     const classes = useStyles();
 
     // To get the right mockup according to the perk type
@@ -57,28 +57,30 @@ const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout}) => {
     return (
         <Container className={classes.root} disableGutters>
             <Card className={classes.card}>
-            <CardActionArea onClick={() => clickCheckout()}>
+                <CardActionArea onClick={() => clickCheckout()}>
                     <CardMedia
-                    className={classes.media}
-                    image={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, perk.defaultArtwork.mockups) || perk.defaultArtwork.originalPicture}
-                    title={perk.defaultArtwork.name + "'s " + perk.perk.name}
+                        className={classes.media}
+                        image={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, perk.defaultArtwork.mockups) || perk.defaultArtwork.originalPicture}
+                        title={perk.defaultArtwork.name + "'s " + perk.perk.name}
                     />
-            </CardActionArea>
-                    <CardContent>
+                
+                <CardContent>
                     <Typography gutterBottom variant="h5" component="h2" className={classes.title}>
                         {perk.perk.name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p" className={classes.perkDescription}>
-                        {perk.perk.description}
+                        {perk.groupDescription
+                            ? perk.groupDescription
+                            : perk.perk.description}
                     </Typography>
-                    </CardContent>
-
+                </CardContent>
+                </CardActionArea>
                 <CardActions>
                     <Button onClick={() => clickCheckout()} size="large" variant="contained" color="primary" disableElevation fullWidth className={classes.buyBtn}>
-                    {"Support for " + perk.perk.calcTotalPrice(perk.perk) + " " + perk.perk.currencyCode}
+                        {"Support for " + perk.perk.calcTotalPrice(perk.perk) + " " + perk.perk.currencyCode}
                     </Button>
                 </CardActions>
-                </Card>
+            </Card>
         </Container>
     );
 };
