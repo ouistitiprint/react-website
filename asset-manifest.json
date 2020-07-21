@@ -1,17 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/static/js/main.4a648e66.chunk.js",
-    "main.js.map": "/static/js/main.4a648e66.chunk.js.map",
+    "main.js": "/static/js/main.8c9960f4.chunk.js",
+    "main.js.map": "/static/js/main.8c9960f4.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.39870823.js",
     "runtime-main.js.map": "/static/js/runtime-main.39870823.js.map",
-    "static/js/2.bb560776.chunk.js": "/static/js/2.bb560776.chunk.js",
-    "static/js/2.bb560776.chunk.js.map": "/static/js/2.bb560776.chunk.js.map",
+    "static/css/2.e3d0dd9d.chunk.css": "/static/css/2.e3d0dd9d.chunk.css",
+    "static/js/2.0d9edfd4.chunk.js": "/static/js/2.0d9edfd4.chunk.js",
+    "static/js/2.0d9edfd4.chunk.js.map": "/static/js/2.0d9edfd4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.7a5d6981b6dd66650261557fe6af649f.js": "/precache-manifest.7a5d6981b6dd66650261557fe6af649f.js",
+    "precache-manifest.db2fc0a845bbec6437541ce789bb8c60.js": "/precache-manifest.db2fc0a845bbec6437541ce789bb8c60.js",
     "service-worker.js": "/service-worker.js",
+    "static/css/2.e3d0dd9d.chunk.css.map": "/static/css/2.e3d0dd9d.chunk.css.map",
     "static/css/main.5ecd60fb.chunk.css.map": "/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.bb560776.chunk.js.LICENSE.txt": "/static/js/2.bb560776.chunk.js.LICENSE.txt",
+    "static/js/2.0d9edfd4.chunk.js.LICENSE.txt": "/static/js/2.0d9edfd4.chunk.js.LICENSE.txt",
     "static/media/blm_logo2.png": "/static/media/blm_logo2.2352ba80.png",
     "static/media/original.png": "/static/media/original.93a2307d.png",
     "static/media/original.jpg": "/static/media/original.bcfdd343.jpg",
@@ -19,13 +21,15 @@
     "static/media/ouistitiPrint_logo-gray.png": "/static/media/ouistitiPrint_logo-gray.5cb46e0a.png",
     "static/media/ouistitiPrint_logo-yellow.png": "/static/media/ouistitiPrint_logo-yellow.5f4048ea.png",
     "static/media/poster.png": "/static/media/poster.fd9c4906.png",
+    "static/media/index.css": "/static/media/roboto-latin-900-normal.bb1e4dc6.woff",
     "static/media/stickers.png": "/static/media/stickers.a1afee22.png",
     "static/media/tote.png": "/static/media/tote.b8733d99.png"
   },
   "entrypoints": [
     "static/js/runtime-main.39870823.js",
-    "static/js/2.bb560776.chunk.js",
+    "static/css/2.e3d0dd9d.chunk.css",
+    "static/js/2.0d9edfd4.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.4a648e66.chunk.js"
+    "static/js/main.8c9960f4.chunk.js"
   ]
 }
