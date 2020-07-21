@@ -54,7 +54,7 @@ export const blm: ICampaignData =
                 perk: perks.poster,
                 defaultArtwork: artworks.camilleAumontCarnel,
                 artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay],
-                groupDescription: "Original portraits of impactful Black people on high quality A0 poster."
+                groupDescription: "Original portraits of impactful Black people on high quality A2 poster."
             },
             {
                 perk: perks.tote,

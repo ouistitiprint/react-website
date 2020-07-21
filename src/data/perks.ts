@@ -31,7 +31,7 @@ export const tote: IPerkData = {
 }
 
 export const poster: IPerkData = {
-    name: "A4 Poster",
+    name: "A2 Poster",
     type: "poster",
     description: "The perfect poster to remind us and the world that the fight is important.",
     value: {
