@@ -11,6 +11,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import { Grid, Slide, Container, Button } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
 
+import Footer from "../presenters/Footer";
+
 const useStyles = makeStyles(theme => ({
     root: {
 
@@ -70,6 +72,7 @@ const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, foundation, showShop,
             </DialogTitle>
             <DialogContent dividers>
                 <PerkShop perk={perk} foundation={foundation} />
+                <Footer/>
             </DialogContent>
         </Dialog>
     );
