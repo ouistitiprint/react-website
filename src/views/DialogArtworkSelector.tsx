@@ -6,7 +6,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
-import { Grid, Typography, Slide, Container } from "@material-ui/core";
+import { Grid, Slide, Container, Button } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
 import { IArtworksData } from "../data/artworks";
 import ArtworkButton from "../controls/ArtworkButton";
@@ -14,6 +14,19 @@ import ArtworkButton from "../controls/ArtworkButton";
 const useStyles = makeStyles(theme => ({
     root: {
 
+    },
+    headerBtn: {
+        borderRadius: 0,
+        fontWeight: "normal",
+        fontSize: "1.8rem",
+        textTransform: "none",
+        justifyContent: "start",
+        textAlign: "start",
+        padding: 0,
+        lineHeight: 1.25,
+        '&:hover': {
+            background: "none",
+        }
     },
 }));
 
@@ -48,9 +61,9 @@ const DialogArtworkSelector: React.FC<IDialogArtworkSelector> = ({ artworks, set
                         justify="space-between"
                         alignItems="center">
                         <Grid item xs={11}>
-                            <Typography variant="h4" component="h2">
+                            <Button onClick={() => setShowSelector(false)} fullWidth className={classes.headerBtn} disableRipple size={"small"}>
                                 {"Select"}
-                            </Typography>
+                            </Button>
                         </Grid>
                         <Grid item xs={1}>
                             <IconButton aria-label="close" onClick={() => setShowSelector(false)}>

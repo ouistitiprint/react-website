@@ -8,12 +8,25 @@ import DialogContent from "@material-ui/core/DialogContent";
 import PerkShop from "../presenters/PerkShop";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
-import { Grid, Typography, Slide, Container } from "@material-ui/core";
+import { Grid, Slide, Container, Button } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
 
 const useStyles = makeStyles(theme => ({
     root: {
 
+    },
+    headerBtn: {
+        borderRadius: 0,
+        fontWeight: "normal",
+        fontSize: "1.8rem",
+        textTransform: "none",
+        justifyContent: "start",
+        textAlign: "start",
+        padding: 0,
+        lineHeight: 1.25,
+        '&:hover': {
+            background: "none",
+        }
     },
 }));
 
@@ -43,9 +56,9 @@ const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, foundation, showShop,
                         justify="space-between"
                         alignItems="center">
                         <Grid item xs={11}>
-                            <Typography variant="h4" component="h2">
+                            <Button onClick={() => setShowShop(false)} fullWidth className={classes.headerBtn} disableRipple size={"small"}>
                                 {"Checkout"}
-                            </Typography>
+                            </Button>
                         </Grid>
                         <Grid item xs={1}>
                             <IconButton aria-label="close" onClick={() => setShowShop(false)}>
