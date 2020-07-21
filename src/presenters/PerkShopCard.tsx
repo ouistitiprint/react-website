@@ -18,6 +18,8 @@ import { theme } from "../style/theming";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
 import { IPerkCampaign } from "../data/campaign";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
@@ -52,10 +54,29 @@ const useStyles = makeStyles({
     },
 
     containerCollapseInfo: {
-        marginBottom: theme.spacing(1),
+        marginBottom: theme.spacing(2),
     },
     cardContentCollapseInfo: {
         paddingTop: 0,
+    },
+    btnLearnMore: {
+        borderRadius: 0,
+        justifyContent: "start",
+        textAlign: "start",
+        '&:hover': {
+            background: "none",
+        }
+    },
+    btnShowLess: {
+        borderRadius: 0,
+        marginTop: theme.spacing(2),
+    },
+    artworkLink: {
+        boxShadow: 'none',
+        borderRadius: 0,
+        border: '1px solid',
+        borderColor: 'rgba(0, 0, 0, 0.125)',
+        textTransform: "none",
     }
 });
 
@@ -81,12 +102,12 @@ const PerkShopCard: React.FC<IPerkShopCard> = ({ perkCampaign, artwork }) => {
         // Initialize an empty array to avoid having the type never
         let emptyArray: string[] = [];
         // Remove duplicates of artists
-        let uniqArtists = artists.reduce(function(a,b){
-            if (a.indexOf(b) < 0 ) a.push(b);
+        let uniqArtists = artists.reduce(function (a, b) {
+            if (a.indexOf(b) < 0) a.push(b);
             return a;
-          },emptyArray);
-        
-          return uniqArtists.join(', ');
+        }, emptyArray);
+
+        return uniqArtists.join(', ');
     }
 
     // To get the right mockup according to the perk type
@@ -98,32 +119,34 @@ const PerkShopCard: React.FC<IPerkShopCard> = ({ perkCampaign, artwork }) => {
     return (
         <Container className={classes.root} disableGutters>
             <Card className={classes.card}>
-                <CardContent>
-                    {perk.groupArtworks
-                        ? null
-                        : <Chip size="small" label={perk.name} className={classes.chipPerkName} />
-                    }
-                    <Typography variant="h5" component="h2">
+                <CardActionArea onClick={handleExpandClick}>
+                    <CardContent>
                         {perk.groupArtworks
-                            ? perk.name
-                            : artwork.name
+                            ? null
+                            : <Chip size="small" label={perk.name} className={classes.chipPerkName} />
                         }
-                    </Typography>
-                    <Typography variant="subtitle2" component="p">
-                        {"by "}
-                        {perk.groupArtworks
-                            ? extractArtistsName(perkCampaign)
-                            : artwork.artist.name
-                        }
-                    </Typography>
-                </CardContent>
-                <CardMedia
-                    className={classes.media}
-                    image={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.type, artwork.mockups) || artwork.originalPicture}
-                    title={artwork.name + "'s " + perk.name}
-                />
+                        <Typography variant="h5" component="h2">
+                            {perk.groupArtworks
+                                ? perk.name
+                                : artwork.name
+                            }
+                        </Typography>
+                        <Typography variant="subtitle2" component="p">
+                            {"by "}
+                            {perk.groupArtworks
+                                ? extractArtistsName(perkCampaign)
+                                : artwork.artist.name
+                            }
+                        </Typography>
+                    </CardContent>
+                    <CardMedia
+                        className={classes.media}
+                        image={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.type, artwork.mockups) || artwork.originalPicture}
+                        title={artwork.name + "'s " + perk.name}
+                    />
+                </CardActionArea>
                 <CardActions disableSpacing>
-                    <Button size="small" onClick={handleExpandClick}>Learn More</Button>
+                    <Button size="small" onClick={handleExpandClick} fullWidth disableRipple className={classes.btnLearnMore}>Learn More</Button>
                     <IconButton
                         className={clsx(classes.expand, {
                             [classes.expandOpen]: expanded,
@@ -137,15 +160,30 @@ const PerkShopCard: React.FC<IPerkShopCard> = ({ perkCampaign, artwork }) => {
                 </CardActions>
                 <Collapse in={expanded} timeout="auto" unmountOnExit>
                     <CardContent className={classes.cardContentCollapseInfo}>
-                        <Container className={classes.containerCollapseInfo} disableGutters>
-                            <Typography variant="body1" component="p">
-                                {perkCampaign.groupDescription
-                                    ? perkCampaign.groupDescription
-                                    : artwork.description
-                                }
-                            </Typography>
-                        </Container>
-                        <Button size="small" onClick={handleExpandClick} fullWidth>Show Less</Button>
+                        <CardActionArea onClick={handleExpandClick}>
+                            <Container className={classes.containerCollapseInfo} disableGutters>
+                                <Typography variant="body1" component="p">
+                                    {perk.groupArtworks && perkCampaign.groupDescription
+                                        ? perkCampaign.groupDescription
+                                        : artwork.description
+                                    }
+                                </Typography>
+                            </Container>
+                        </CardActionArea>
+                        <Grid container spacing={2}>
+                            {perk.groupArtworks
+                                ? null
+                                : (artwork.listLinks === undefined) ? null : artwork.listLinks.map((link) => {
+                                    return (
+                                    <Grid item xs={12} md={6}>
+                                        <Button href={link.url} target="_blank" rel="noreferrer" className={classes.artworkLink} fullWidth>
+                                            {link.name}
+                                        </Button>
+                                    </Grid>);
+                                })
+                            }
+                        </Grid>
+                        <Button size="small" onClick={handleExpandClick} className={classes.btnShowLess} fullWidth>Show Less</Button>
                     </CardContent>
                 </Collapse>
             </Card>
