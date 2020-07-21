@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a6b30519a333ba6ffa977f39546ebaf",
+    "revision": "ce4580d074dc6b4a4448a08386526b99",
     "url": "/index.html"
   },
   {
-    "revision": "3ed76f4b44e9cb1e9398",
+    "revision": "7f1c47bda6b48f36c2cd",
     "url": "/static/css/2.e3d0dd9d.chunk.css"
   },
   {
-    "revision": "205d144534e622a9b240",
+    "revision": "f695f63eb7ae6009138b",
     "url": "/static/css/main.5ecd60fb.chunk.css"
   },
   {
-    "revision": "3ed76f4b44e9cb1e9398",
-    "url": "/static/js/2.6b251339.chunk.js"
+    "revision": "7f1c47bda6b48f36c2cd",
+    "url": "/static/js/2.3c65d934.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/static/js/2.6b251339.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.3c65d934.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "205d144534e622a9b240",
-    "url": "/static/js/main.a8124ea3.chunk.js"
+    "revision": "f695f63eb7ae6009138b",
+    "url": "/static/js/main.300b5ca1.chunk.js"
   },
   {
     "revision": "f57bd6b3cd488554ebce",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2352ba80cac25961f0b6c5012bf78ca2",
     "url": "/static/media/blm_logo2.2352ba80.png"
+  },
+  {
+    "revision": "757a2b6770802ef710af9bc13f85c7f0",
+    "url": "/static/media/cards.757a2b67.png"
   },
   {
     "revision": "0897d091a519462e91dff293e5f40a9b",
