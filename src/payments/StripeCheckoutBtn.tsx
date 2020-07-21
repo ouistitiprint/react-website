@@ -17,7 +17,7 @@ const useStyles = makeStyles({
         borderRadius: 0,
     },
     powerByStripe: {
-        textAlign: "justify",
+        textAlign: "center",
     },
     stripeLink: {
         fontWeight: "bold",
