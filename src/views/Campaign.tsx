@@ -23,6 +23,9 @@ const useStyles = makeStyles(theme => ({
     },
     campaignSection: {
         marginTop: theme.spacing(3),
+    },
+    perkDescription:{
+        marginBottom: theme.spacing(2),
     }
 }));
 
@@ -67,7 +70,7 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
                 <Typography variant="h4" component="h2" gutterBottom>
                     {"Perks"}
                 </Typography>
-                <Typography variant="body1" component="p" gutterBottom>
+                <Typography variant="body1" component="p" gutterBottom className={classes.perkDescription}>
                     {campaign.perksDescription}
                 </Typography>
                 <PerksDisplay campaign={campaign} />
