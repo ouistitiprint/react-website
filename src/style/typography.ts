@@ -1,3 +1,3 @@
 export const fontFamily = "Roboto";
 
-export const baseFontSize = 12;
+export const baseFontSize = 14;

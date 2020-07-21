@@ -56,7 +56,7 @@ const useStyles = makeStyles({
         }
     },
     artistDescription: {
-        height: "7rem", // Only display 3 lines of text, not 4
+        // height: "11em",
         overflow: "hidden",
     }
 });

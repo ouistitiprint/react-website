@@ -35,7 +35,7 @@ const useStyles = makeStyles({
         borderRadius: 0,
     },
     perkDescription: {
-        height: "3rem",
+        height: "6em",
         overflow: "hidden",
     },
 });
