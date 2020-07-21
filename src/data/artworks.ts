@@ -24,7 +24,10 @@ import original_blmsticker01 from "./images/artworks/blmsticker01/original.png";
 import stickers_blmsticker01 from "./images/artworks/blmsticker01/stickers.png";
 
 import original_blmsticker02 from "./images/artworks/blmsticker02/original.png";
+
 import original_blmsticker03 from "./images/artworks/blmsticker03/original.png";
+import cards_blmsticker03 from "./images/artworks/blmsticker03/cards.png";
+
 import original_blmsticker04 from "./images/artworks/blmsticker04/original.png";
 import original_blmsticker05 from "./images/artworks/blmsticker05/original.png";
 
@@ -167,7 +170,9 @@ export const blmstiocker03: IArtworksData = {
     description: "Black Lives Matter",
     originalPicture: original_blmsticker03,
     artist: artists.priyaducommun,
-    mockups:{},
+    mockups:{
+        cards: cards_blmsticker03
+    },
     api:{},
 }
 
