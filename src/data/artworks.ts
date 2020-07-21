@@ -31,6 +31,7 @@ import original_blmsticker05 from "./images/artworks/blmsticker05/original.png";
 export interface IArtworksData {
     name: string,
     description: string,
+    listLinks?:{ name: string; url: string; }[],
     originalPicture: string,
     artist:artists.IArtistsData,
     mockups:{
@@ -75,7 +76,13 @@ export const oluwaytoyinSalau: IArtworksData = {
 
 export const amandineGay: IArtworksData = {
     name: "Amandine Gay",
-    description: "Mauris malesuada tincidunt sodales. Nulla interdum iaculis magna. Nulla facilisi. Nulla et elementum ligula, vitae vehicula libero. Quisque nec elit eget mi fringilla ultricies id id felis. Nam sed euismod tortor. Proin vitae mattis elit, non porttitor metus. Sed lobortis justo congue sapien elementum aliquam. Aenean eu imperdiet nisl. Nullam suscipit odio ut urna pellentesque, pharetra porta orci aliquam. Vestibulum blandit sapien sit amet diam sodales egestas. Quisque lacus tortor, tristique in consectetur vitae, suscipit at libero. Ut vitae nunc tortor. Sed ac tortor eu est pellentesque euismod. Fusce pretium egestas ex, eu sagittis nunc. Suspendisse elementum sit amet lorem nec imperdiet.",
+    description: "Amandine Gay is a scholar, speaker, and filmmaker. Her first documentary “Ouvrir la Voix” enables the voice of black women from European colonial history in Africa and the West Indies.",
+    listLinks:[
+        {
+            name: "Amandine Gay's Instagram",
+            url: "https://www.instagram.com/orpheonegra",
+        }
+    ],
     originalPicture: original_amandinegay,
     artist: artists.priyaducommun,
     mockups:{
@@ -87,7 +94,25 @@ export const amandineGay: IArtworksData = {
 
 export const camilleAumontCarnel: IArtworksData = {
     name: "Camille Aumont Carnel",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id imperdiet leo, non pharetra libero. Fusce vehicula ante posuere dapibus semper. Fusce ultricies rhoncus odio, et venenatis felis tristique id. Pellentesque quis lorem consectetur erat ultrices eleifend. Morbi pharetra luctus ipsum sit amet lacinia. Vestibulum feugiat, nunc at gravida venenatis, nibh mi ullamcorper diam, vitae faucibus sem turpis eget erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas purus maximus felis hendrerit, sed rhoncus magna maximus. In tincidunt mollis dolor, a ullamcorper lectus pharetra et. Mauris facilisis erat non arcu cursus venenatis. Praesent facilisis mauris quis metus consectetur convallis.",
+    description: "Camille Aumont Carnel; author, militant and female entrepreneur, she is the founder of @jemenbatsleclito and @jedisnonchef - to say out loud what others don’t. Her account @lafaqdecamille is a collective, inclusive, and anonymous guide to talk about sexual education.",
+    listLinks:[
+        {
+            name: "Camille Aumont Carnel's Instagram",
+            url: "https://www.instagram.com/camilleaumontcarnel",
+        },
+        {
+            name: "@jemenbatsleclito on Instagram",
+            url: "https://www.instagram.com/jemenbatsleclito",
+        },
+        {
+            name: "@jedisnonchef on Instagram",
+            url: "https://www.instagram.com/jedisnonchef",
+        },
+        {
+            name: "@lafaqdecamille Instagram",
+            url: "https://www.instagram.com/lafaqdecamille",
+        },
+    ],
     originalPicture: original_camilleaumontcarnel,
     artist: artists.priyaducommun,
     mockups:{
@@ -101,7 +126,13 @@ export const camilleAumontCarnel: IArtworksData = {
 
 export const jaeAdrianaParmer: IArtworksData = {
     name: "Jae Adriana Parmer",
-    description: "Aliquam facilisis nisi metus, sed hendrerit mauris fermentum quis. Donec sed sapien sed lectus lacinia fringilla vitae nec dolor. Integer gravida odio at leo posuere, sed venenatis nunc finibus. Pellentesque porttitor facilisis tortor ut aliquam. Duis finibus suscipit tristique. Etiam commodo placerat feugiat. Aliquam ac consequat justo. Vivamus id suscipit magna. Donec elementum egestas magna in placerat. Curabitur pharetra dolor vitae orci imperdiet convallis. Morbi rutrum orci ac libero tincidunt commodo. Nam non leo maximus odio tristique condimentum et nec turpis. Suspendisse nec sodales lectus. Vivamus eget accumsan est.",
+    description: "Jae Adriana Parmer is a mental health advocate - she works to make adoption trauma, suicide, and wellness recognized. The community created is growing and she is making sure the adoptee’s voices are being heard!",
+    listLinks:[
+        {
+            name: "Jae Adriana Parmer's Instagram",
+            url: "https://www.instagram.com/iamadopted",
+        }
+    ],
     originalPicture: original_jaeadrianaparmer,
     artist: artists.priyaducommun,
     mockups:{
