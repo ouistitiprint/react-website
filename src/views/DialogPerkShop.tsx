@@ -8,7 +8,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import PerkShop from "../presenters/PerkShop";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from '@material-ui/icons/Close';
-import { Grid, Slide, Container, Button } from "@material-ui/core";
+import { Grid, Slide, Container, Button, Hidden } from "@material-ui/core";
 import { TransitionProps } from "@material-ui/core/transitions/transition";
 
 import Footer from "../presenters/Footer";
@@ -72,7 +72,10 @@ const DialogPerkShop: React.FC<IDialogPerkShop> = ({ perk, foundation, showShop,
             </DialogTitle>
             <DialogContent dividers>
                 <PerkShop perk={perk} foundation={foundation} />
-                <Footer/>
+                {/* Hide the footer for small screen as it is used only in big screen to help user see the 'Learn More" on the PerkShopCard.s*/}
+                <Hidden smDown>
+                    <Footer/>
+                </Hidden>
             </DialogContent>
         </Dialog>
     );
