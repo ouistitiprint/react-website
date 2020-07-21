@@ -109,7 +109,7 @@ const PerkShop: React.FC<IPerkShop> = ({ perk, foundation }) => {
                 : <DialogArtworkSelector artworks={perk.artworks} setSelectedArtwork={setSelectedArtwork} showSelector={showArtworkSelector} setShowSelector={setShowArtworkSelector} />
             }
             <Alert icon={"✊"} severity="success" className={classes.alertDonation}>
-                {"Give " + perk.perk.value.donation + " " + perk.perk.currencyCode + " to " + foundation.name + " with your purchase!"}
+                {"Donate " + perk.perk.value.donation + " " + perk.perk.currencyCode + " to " + foundation.name + " with your purchase!"}
             </Alert>
             <Grid container className={classes.gridShop} justify="space-between" spacing={3}>
                 <Grid item xs={12} md={8}>
