@@ -11,7 +11,7 @@ export interface IArtistsData {
 export const priyaducommun: IArtistsData =
     {
         name: "Priya Ducommun",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rhoncus tortor eget erat euismod feugiat non sit amet quam. Quisque vel nisl sit amet metus semper laoreet.",
+        description: "Priya has just returned from five years in Bangalore (South India). A storyteller first, her work engages with what she believes is worth fighting for and participates in being a changemaker.",
         picture: picturePriya,
         listSocial: [{
             name: "instagram",
@@ -22,10 +22,10 @@ export const priyaducommun: IArtistsData =
 export const joharistone: IArtistsData =
 {
     name: "Johari Stone",
-    description: "Hello, my name is Johari Stone and I am a 19-year-old graphic designer from Atlanta, GA.",
+    description: "Johari is a 19-year-old freelance graphic designer from Atlanta, GA. She owns Faithful Creations - a black-owned business and is the co-founder of Humble Dreamers Records.",
     picture: pictureJohari,
     listSocial: [{
         name: "instagram",
-        url: "https://www.instagram.com/jxharis/"
+        url: "https://www.instagram.com/faithful.creations1/"
     }]
 };
