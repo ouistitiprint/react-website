@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a3ffebba7f158f797f72b34810dc2e9f",
+    "revision": "9a9df10931f0d1859590d7c069b2ba4b",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.e3d0dd9d.chunk.css"
   },
   {
-    "revision": "3fd678e51da85566b417",
+    "revision": "9438f12a43b424e81c57",
     "url": "/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.14052e10.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3fd678e51da85566b417",
-    "url": "/static/js/main.ed47f27b.chunk.js"
+    "revision": "9438f12a43b424e81c57",
+    "url": "/static/js/main.a14374b0.chunk.js"
   },
   {
     "revision": "f57bd6b3cd488554ebce",
@@ -208,23 +208,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/stickers.52ed9667.png"
   },
   {
-    "revision": "179d0b9213aeeba6cbfccc880e5b7c86",
-    "url": "/static/media/tote.179d0b92.png"
+    "revision": "54a57b5e89f7bc58738733f6d3b5636d",
+    "url": "/static/media/tote.54a57b5e.png"
   },
   {
-    "revision": "54fcfd605b2feefcedef98ed46b730d0",
-    "url": "/static/media/tote.54fcfd60.png"
+    "revision": "56b55e0f4d69c7591711fb977fce92da",
+    "url": "/static/media/tote.56b55e0f.png"
   },
   {
-    "revision": "a28744adbe4a372445bb7ae032764e51",
-    "url": "/static/media/tote.a28744ad.png"
+    "revision": "7d5653b18c1f12fdf9b0a2fb2b0e1a9b",
+    "url": "/static/media/tote.7d5653b1.png"
   },
   {
-    "revision": "b4d0b4d2e22a5af2db82675507c9d3b2",
-    "url": "/static/media/tote.b4d0b4d2.png"
+    "revision": "87c34ef2e3df465fc8368fae9a819d16",
+    "url": "/static/media/tote.87c34ef2.png"
   },
   {
-    "revision": "b8733d9923817c03f51dd2524e960e58",
-    "url": "/static/media/tote.b8733d99.png"
+    "revision": "b573355bda8cde2ecca7c69b91e17877",
+    "url": "/static/media/tote.b573355b.png"
   }
 ]);
