@@ -60,7 +60,7 @@ export const blm: ICampaignData =
                 perk: perks.tote,
                 defaultArtwork: artworks.kobeBryant,
                 artworks:[artworks.kobeBryant, artworks.oluwaytoyinSalau, artworks.camilleAumontCarnel, artworks.jaeAdrianaParmer, artworks.amandineGay],
-                groupDescription: "Original portraits of impactful Black people printed on textile tote bag."
+                groupDescription: "Original portraits of impactful Black people printed on a textile tote bag."
             },
             {
                 perk: perks.stickers,
