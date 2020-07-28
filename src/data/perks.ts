@@ -21,8 +21,8 @@ export const tote: IPerkData = {
     type: "tote",
     description: "The perfect tote bag to show your support when going outside.",
     value: {
-        product: 20,
-        shipping: 0,
+        product: 18.5,
+        shipping: 13.5,
         donation: 5,
     },
     currencyCode: '€',
@@ -35,9 +35,9 @@ export const poster: IPerkData = {
     type: "poster",
     description: "The perfect poster to remind us and the world that the fight is important.",
     value: {
-        product: 30,
-        shipping: 0,
-        donation: 10,
+        product: 11.5,
+        shipping: 5.5,
+        donation: 5,
     },
     currencyCode: '€',
     calcTotalPrice: getTotalPrice,
@@ -45,12 +45,12 @@ export const poster: IPerkData = {
 }
 
 export const stickers: IPerkData = {
-    name: "5x Stickers",
+    name: "24x Stickers",
     type: "stickers",
     description: "The perfect stickers to show your support.",
     value: {
-        product: 15,
-        shipping: 0,
+        product: 10,
+        shipping: 3.5,
         donation: 3,
     },
     currencyCode: '€',
@@ -63,7 +63,7 @@ export const cards: IPerkData = {
     type: "cards",
     description: "All the artworks of the campaign printed on high quality cards with a matte finish.",
     value: {
-        product: 8,
+        product: 7,
         shipping: 0,
         donation: 2,
     },
