@@ -79,7 +79,7 @@ const DialogArtworkSelector: React.FC<IDialogArtworkSelector> = ({ artworks, set
                     spacing={1}>
                     {artworks.map((artwork) => {
                         return (
-                            <Grid item xs={12} md={6} lg={4}>
+                            <Grid item xs={12} md={6} lg={4} key={artwork.name.replace(/\s+/g, '')}>
                                 <ArtworkButton artwork={artwork} handleClick={() => handleArtworkSelection(artwork)} />
                             </Grid>
                         );

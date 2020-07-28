@@ -88,17 +88,17 @@ const CreatorCard: React.FC<ICreatorCard> = ({ artist }) => {
                     {artist.listSocial.map((media) => {
                         if (media.name === 'instagram') {
                             return (
-                                <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url} rel="noreferrer">
+                                <IconButton aria-label={artist.name + "'s " + media.name} key={'instagram'} className={classes.socialBtn} target="_blank" href={media.url} rel="noreferrer">
                                     <Instagram fontSize="inherit" />
                                 </IconButton>);
                         } else if (media.name === 'pinterest') {
                             return (
-                                <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url} rel="noreferrer">
+                                <IconButton aria-label={artist.name + "'s " + media.name} key={'pinterest'} className={classes.socialBtn} target="_blank" href={media.url} rel="noreferrer">
                                     <Pinterest fontSize="inherit" />
                                 </IconButton>);
                         } else if (media.name === 'facebook') {
                             return (
-                                <IconButton aria-label={artist.name + "'s " + media.name} className={classes.socialBtn} target="_blank" href={media.url} rel="noreferrer">
+                                <IconButton aria-label={artist.name + "'s " + media.name} key={'facebook'} className={classes.socialBtn} target="_blank" href={media.url} rel="noreferrer">
                                     <Facebook fontSize="inherit" />
                                 </IconButton>);
                         } else {

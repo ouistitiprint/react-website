@@ -38,7 +38,7 @@ const PerksDisplay: React.FC<IPerksDisplay> = ({ campaign }) => {
             alignItems="flex-start" spacing={2}>
         {perks.map((perk) => {
             return (
-                <Grid item xs={12} sm={6} md={4}>
+                <Grid item xs={12} sm={6} md={4} key={perk.perk.name.replace(/\s+/g, '')}>
                     <PerkCard perk={perk} clickCheckout={() => handleClickCheckout(perk)}/>
                 </Grid>
             );
