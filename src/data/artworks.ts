@@ -51,6 +51,9 @@ export interface IArtworksData {
     }
 }
 
+const api_price_cards_blm: string = 'price_1H9lu9D8Gtwxp1HbcEhBgmFC';
+const api_price_stickers_blm: string = 'price_1H9ln4D8Gtwxp1Hb1C5CmgXU';
+
 export const kobeBryant: IArtworksData = {
     name: "Kobe Bryant",
     description: "Kobe Bryant was like a superhero to me. His skills, his words of wisdom, and how he touched the souls of millions was very appreciated. He was like family to everyone he met and when he died, he took part of the goodness of the world with him. Kobe Bryant died in a helicopter crash on Jan. 26, 2020. He was 41. Also killed in the crash was Bryant's 13-year-old daughter, Gianna, and seven others who were on board the aircraft. Bryant became one of the NBA's most popular players and the face of the Lakers during his career. Kobe was an 18-time All-Star champion who won five NBA championships, 4 NBA All-Star Game MVP awards and became one of the greatest basketball players of his generation during a 20-year career with the Lakers. He was the overall league MVP in 2008, a two-time NBA scoring champion and 12 All-Defensive selections. Kobe Bryant was a legend and will be greatly missed by millions of people around the world. As Kobe once said. “The most important thing is to try and inspire people so that they can be great in whatever they want to do.",
@@ -61,7 +64,8 @@ export const kobeBryant: IArtworksData = {
         tote: tote_kobebryant,
     },
     api:{
-        poster: 'price_1H6ddTD8Gtwxp1HbRhF34OO7', //Test
+        cards: api_price_cards_blm,
+        poster: 'price_1H9m3ZD8Gtwxp1HbJGkKZjFH',
     },
 }
 
@@ -74,7 +78,10 @@ export const oluwaytoyinSalau: IArtworksData = {
         poster: poster_oluwaytoyinsalau,
         tote: tote_oluwaytoyinsalau,
     },
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        poster: 'price_1H9m7TD8Gtwxp1HbmwpsURSF',
+    },
 }
 
 export const amandineGay: IArtworksData = {
@@ -92,7 +99,10 @@ export const amandineGay: IArtworksData = {
         poster: poster_amandinegay,
         tote: tote_amandinegay,
     },
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        poster: 'price_1H9mAfD8Gtwxp1Hb9Tud3nXt',
+    },
 }
 
 export const camilleAumontCarnel: IArtworksData = {
@@ -123,7 +133,8 @@ export const camilleAumontCarnel: IArtworksData = {
         tote: tote_camilleaumontcarnel,
     },
     api:{
-        poster: 'price_1H6c4uD8Gtwxp1HbtH1FjTGy', // Test
+        cards: api_price_cards_blm,
+        poster: 'price_1H9mDeD8Gtwxp1HbLMwnLNA4',
     },
 }
 
@@ -142,7 +153,10 @@ export const jaeAdrianaParmer: IArtworksData = {
         poster: poster_jaeadrianaparmer,
         tote: tote_jaeadrianaparmer,
     },
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        poster: 'price_1H9mFTD8Gtwxp1HbAzdgaRjU',
+    },
 }
 
 export const blmstiocker01: IArtworksData = {
@@ -153,7 +167,10 @@ export const blmstiocker01: IArtworksData = {
     mockups:{
         stickers: stickers_blmsticker01,
     },
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        stickers: api_price_stickers_blm,
+    },
 }
 
 export const blmstiocker02: IArtworksData = {
@@ -162,7 +179,10 @@ export const blmstiocker02: IArtworksData = {
     originalPicture: original_blmsticker02,
     artist: artists.priyaducommun,
     mockups:{},
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        stickers: api_price_stickers_blm,
+    },
 }
 
 export const blmstiocker03: IArtworksData = {
@@ -173,7 +193,10 @@ export const blmstiocker03: IArtworksData = {
     mockups:{
         cards: cards_blmsticker03
     },
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        stickers: api_price_stickers_blm,
+    },
 }
 
 export const blmstiocker04: IArtworksData = {
@@ -182,7 +205,10 @@ export const blmstiocker04: IArtworksData = {
     originalPicture: original_blmsticker04,
     artist: artists.priyaducommun,
     mockups:{},
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        stickers: api_price_stickers_blm,
+    },
 }
 
 export const blmstiocker05: IArtworksData = {
@@ -191,7 +217,10 @@ export const blmstiocker05: IArtworksData = {
     originalPicture: original_blmsticker05,
     artist: artists.priyaducommun,
     mockups:{},
-    api:{},
+    api:{
+        cards: api_price_cards_blm,
+        stickers: api_price_stickers_blm,
+    },
 }
 
 
