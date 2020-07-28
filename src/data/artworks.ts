@@ -66,6 +66,7 @@ export const kobeBryant: IArtworksData = {
     api:{
         cards: api_price_cards_blm,
         poster: 'price_1H9m3ZD8Gtwxp1HbJGkKZjFH',
+        tote: 'price_1H9mUBD8Gtwxp1HbU4403hUe',
     },
 }
 
@@ -81,6 +82,7 @@ export const oluwaytoyinSalau: IArtworksData = {
     api:{
         cards: api_price_cards_blm,
         poster: 'price_1H9m7TD8Gtwxp1HbmwpsURSF',
+        tote: 'price_1H9mYkD8Gtwxp1HbA3A3Uvg2',
     },
 }
 
@@ -102,6 +104,7 @@ export const amandineGay: IArtworksData = {
     api:{
         cards: api_price_cards_blm,
         poster: 'price_1H9mAfD8Gtwxp1Hb9Tud3nXt',
+        tote:'price_1H9mbbD8Gtwxp1HbenR2BqoK',
     },
 }
 
@@ -135,6 +138,7 @@ export const camilleAumontCarnel: IArtworksData = {
     api:{
         cards: api_price_cards_blm,
         poster: 'price_1H9mDeD8Gtwxp1HbLMwnLNA4',
+        tote: 'price_1H9meKD8Gtwxp1Hb3ZRZH8d4',
     },
 }
 
@@ -156,6 +160,7 @@ export const jaeAdrianaParmer: IArtworksData = {
     api:{
         cards: api_price_cards_blm,
         poster: 'price_1H9mFTD8Gtwxp1HbAzdgaRjU',
+        tote: 'price_1H9mh9D8Gtwxp1Hb77cFslSw',
     },
 }
 
