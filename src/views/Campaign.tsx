@@ -12,7 +12,7 @@ import { logo } from "../data/images/platform/logo";
 import PerksDisplay from "../presenters/PerksDisplay";
 import { setQueryStringValue, getPaymentStatus } from "../helpers/queryString";
 import DialogPaymentSuccessful from "./DialogPaymentSuccessful";
-import DialogPaymentCanceled from "./DialogPaymentCanceled";
+// import DialogPaymentCanceled from "./DialogPaymentCanceled";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -49,9 +49,9 @@ const Campaign: React.FC<ICampaign> = ({ campaign }) => {
             <DialogPaymentSuccessful
                 showDialog={paymentStatus === "paymentSuccessful"}
                 closeDialog={() => setPaymentStatus("shopping")} />
-            <DialogPaymentCanceled
+            {/* <DialogPaymentCanceled
                 showDialog={paymentStatus === "paymentCanceled"}
-                closeDialog={() => setPaymentStatus("shopping")} />
+                closeDialog={() => setPaymentStatus("shopping")} /> */}
             {/* --- Campaign Header --- */}
             <CampaignHeader logo={logo.gray} logoFoundation={campaign.foundation.logo} title={campaign.title} subtitle={campaign.subtitle} />
             {/* --- Campaign Display --- */}
