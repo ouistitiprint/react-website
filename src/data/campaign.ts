@@ -66,7 +66,7 @@ export const blm: ICampaignData =
                 perk: perks.stickers,
                 defaultArtwork: artworks.blmstiocker01,
                 artworks:[artworks.blmstiocker01, artworks.blmstiocker02, artworks.blmstiocker03, artworks.blmstiocker04, artworks.blmstiocker05],
-                groupDescription: "Recognizable visuals for Black Lives Matter turned into a set of five stickers designed by Priya Ducommun."
+                groupDescription: "Recognizable visuals for Black Lives Matter turned into a set of stickers designed by Priya Ducommun."
             },
             {
                 perk: perks.cards,
