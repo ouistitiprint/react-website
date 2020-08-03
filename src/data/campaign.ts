@@ -45,8 +45,8 @@ export const blm: ICampaignData =
             website: "https://blacklivesmatter.com/",
             logo: blm_logo,
         },
-        startDate: new Date(2020, 6, 1, 0, 0, 0, 0),
-        endDate: new Date(2020, 6, 31, 23, 59, 59, 0),
+        startDate: new Date(2020, 7, 3, 0, 0, 0, 0),
+        endDate: new Date(2020, 7, 16, 23, 59, 59, 0),
         description: "We want to celebrate Black people making the world a better place!  Therefore, we created a series of original artworks honoring Black people having an impact on their community. Using different mediums and formats, we aspired to give Black figures of activism and militantism space and help more voices come forward and speak out. Together with Ouistiti Print, we are happy to give you the opportunity to support our mission. We are selling for the benefit of #BlackLivesMatters, different perks customized with the portrait of impactful Black figures dear to us. We described why we chose this person for each artwork, so don't hesitate to get to know them more. Hear them now, and never let them go silent again.",
         perksDescription: "We picked 4 different mediums to help the voice of Black people be heard. You can get one of the portraits on an A2 poster or a Tote bag or chose to get the full collection on small cards and always carry them around with you. Finally, we created some unique stickers to help you spread the words. All the profits will be sent to #BlackLivesMatter.",
         perks:[
