@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9aaef62fdbfa4f5d4770a7ab019d0797",
+    "revision": "fafeebbc116155e420e378b44d700f17",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.e3d0dd9d.chunk.css"
   },
   {
-    "revision": "51c7ce82550e08701976",
+    "revision": "0d86ce1c440a32759af9",
     "url": "/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.6a57ccd1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "51c7ce82550e08701976",
-    "url": "/static/js/main.8b40eeae.chunk.js"
+    "revision": "0d86ce1c440a32759af9",
+    "url": "/static/js/main.cb9c4bf2.chunk.js"
   },
   {
     "revision": "f57bd6b3cd488554ebce",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/blm_logo2.2352ba80.png"
   },
   {
-    "revision": "68ffe87ed238389f1f7697445b121f66",
-    "url": "/static/media/cards.68ffe87e.png"
+    "revision": "19b1be17cd6df614948ae7d0b0c9aa9b",
+    "url": "/static/media/cards.19b1be17.png"
   },
   {
     "revision": "0897d091a519462e91dff293e5f40a9b",
