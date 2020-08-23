@@ -84,6 +84,13 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                     : "artist"
                 }
             </Typography>
+            {/* --- Fundings (when finished) --- */}
+            <Typography variant="h2" component="p">
+                {campaign.totalAmountRaised + " " + campaign.currencyCode}
+            </Typography>
+            <Typography variant="subtitle2" component="p">
+                {"raised to support " + campaign.foundation.name}
+            </Typography>
 
             <Button size="large" variant="contained" color="primary" className={classes.supportBtn} disableElevation href={'#perks'} fullWidth>
                 {"Support This Campaign"}
@@ -135,7 +142,12 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                 </Grid>
             </Grid>
             <Typography variant="body1" component="p" className={classes.profitDisclaimer}>
-                {"All the profits from the sales will be sent to the "}
+                {"All the profits from the sales "}
+                {remainingDays > 0
+                    ? "will be"
+                    : "have been"
+                }
+                {" sent to the "}
                 <Link href={campaign.foundation.website} color="inherit" underline={"always"}>
                     {campaign.foundation.officialName}
                 </Link>
