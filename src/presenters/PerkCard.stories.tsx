@@ -19,7 +19,8 @@ storiesOf("PerkCard", module)
     </MuiThemeProvider>
   ))
 
-  .add("poster", () => <PerkCard perk={campaign.blm.perks[0]} clickCheckout={handleClick}/>)
-  .add("tote", () => <PerkCard perk={campaign.blm.perks[1]} clickCheckout={handleClick}/>)
-  .add("stickers", () => <PerkCard perk={campaign.blm.perks[2]} clickCheckout={handleClick}/>)
-  .add("cards", () => <PerkCard perk={campaign.blm.perks[3]} clickCheckout={handleClick}/>);
+  .add("poster", () => <PerkCard perk={campaign.blm.perks[0]} clickCheckout={handleClick} disablePerk={false}/>)
+  .add("tote", () => <PerkCard perk={campaign.blm.perks[1]} clickCheckout={handleClick} disablePerk={false}/>)
+  .add("stickers", () => <PerkCard perk={campaign.blm.perks[2]} clickCheckout={handleClick} disablePerk={false}/>)
+  .add("cards", () => <PerkCard perk={campaign.blm.perks[3]} clickCheckout={handleClick} disablePerk={false}/>)
+  .add("disable", () => <PerkCard perk={campaign.blm.perks[3]} clickCheckout={handleClick} disablePerk={true}/>);

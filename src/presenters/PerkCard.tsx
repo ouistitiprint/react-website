@@ -43,9 +43,10 @@ const useStyles = makeStyles({
 export interface IPerkCard {
     perk: IPerkCampaign,
     clickCheckout: () => void;
+    disablePerk: boolean;
 }
 
-const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout }) => {
+const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout, disablePerk}) => {
     const classes = useStyles();
 
     // To get the right mockup according to the perk type
@@ -57,7 +58,7 @@ const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout }) => {
     return (
         <Container className={classes.root} disableGutters>
             <Card className={classes.card}>
-                <CardActionArea onClick={() => clickCheckout()}>
+                <CardActionArea onClick={() => clickCheckout()} disabled={disablePerk}>
                     <CardMedia
                         className={classes.media}
                         image={getKeyValue<keyof IArtworksData["mockups"], IArtworksData["mockups"]>(perk.perk.type, perk.defaultArtwork.mockups) || perk.defaultArtwork.originalPicture}
@@ -76,8 +77,11 @@ const PerkCard: React.FC<IPerkCard> = ({ perk, clickCheckout }) => {
                 </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button onClick={() => clickCheckout()} size="large" variant="contained" color="primary" disableElevation fullWidth className={classes.buyBtn}>
-                        {"Support for " + (perk.perk.calcTotalPrice(perk.perk) - perk.perk.value.shipping) + " " + perk.perk.currencyCode}
+                    <Button onClick={() => clickCheckout()} size="large" variant="contained" color="primary" disableElevation fullWidth className={classes.buyBtn} disabled={disablePerk}>
+                        {disablePerk
+                            ? "Not Available"
+                            : "Support for " + (perk.perk.calcTotalPrice(perk.perk) - perk.perk.value.shipping) + " " + perk.perk.currencyCode
+                        }
                     </Button>
                 </CardActions>
             </Card>
