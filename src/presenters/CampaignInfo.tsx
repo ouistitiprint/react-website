@@ -41,7 +41,7 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
 
     function getRemainingDays(startDate: Date, endDate: Date): number {
         let nowDate: Date = new Date();
-        return Math.round((endDate.getTime() - nowDate.getTime()) / (1000 * 3600 * 24));
+        return Math.round((endDate.getTime() - nowDate.getTime()) / (1000 * 3600 * 24) + 1);
     }
 
     function getPercentageRemainingTime(startDate: Date, endDate: Date): number {
