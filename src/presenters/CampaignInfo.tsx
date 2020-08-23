@@ -51,6 +51,8 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
         return Math.round(pastTime * 100 / totalDuration);
     }
 
+    const remainingDays = getRemainingDays(campaign.startDate, campaign.endDate);
+
     return (
         <Container className={classes.root} disableGutters>
             <LinearProgress
@@ -62,10 +64,13 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                 }} />
             {/* --- Days to go --- */}
             <Typography variant="h2" component="p">
-                {getRemainingDays(campaign.startDate, campaign.endDate)}
+                {remainingDays}
             </Typography>
             <Typography variant="subtitle2" component="p">
-                {"days to go"}
+                {remainingDays > 1
+                    ? "days to go"
+                    : "day to go"
+                }
             </Typography>
             {/* --- Artists --- */}
             <Typography variant="h2" component="p">
@@ -74,7 +79,10 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                 </Link>
             </Typography>
             <Typography variant="subtitle2" component="p">
-                {"artists"}
+                {campaign.artists.length > 1
+                    ? "artists"
+                    : "artist"
+                }
             </Typography>
 
             <Button size="large" variant="contained" color="primary" className={classes.supportBtn} disableElevation href={'#perks'} fullWidth>
