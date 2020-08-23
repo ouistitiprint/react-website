@@ -28,6 +28,13 @@ const PerksDisplay: React.FC<IPerksDisplay> = ({ campaign }) => {
         setShowShop(true);
         setPerkInShop(perk);
       };
+    
+    //   TODO: Having to calculate this here is not the best options --> context?
+    const isDisable = () => {
+        let nowDate: Date = new Date();
+        let remainingDays: number = Math.round((campaign.endDate.getTime() - nowDate.getTime()) / (1000 * 3600 * 24) + 1);
+        return remainingDays < 1;
+    }
 
     return (
         <Container disableGutters>
@@ -39,7 +46,7 @@ const PerksDisplay: React.FC<IPerksDisplay> = ({ campaign }) => {
         {perks.map((perk) => {
             return (
                 <Grid item xs={12} sm={6} md={4} key={perk.perk.name.replace(/\s+/g, '')}>
-                    <PerkCard perk={perk} clickCheckout={() => handleClickCheckout(perk)}/>
+                    <PerkCard perk={perk} clickCheckout={() => handleClickCheckout(perk)} disablePerk={isDisable()}/>
                 </Grid>
             );
         })}
