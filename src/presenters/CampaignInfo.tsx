@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { ICampaignData } from "../data/campaign";
 
 import LinearProgress from "@material-ui/core/LinearProgress";
-import { Typography, Container, Button, Grid, Link } from "@material-ui/core";
+import { Typography, Container, Button, Grid, Link, Box } from "@material-ui/core";
 import { Instagram, Facebook, Twitter, Mail } from '@material-ui/icons';
 import { theme } from "../style/theming";
 
@@ -41,14 +41,23 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
 
     function getRemainingDays(startDate: Date, endDate: Date): number {
         let nowDate: Date = new Date();
-        return Math.round((endDate.getTime() - nowDate.getTime()) / (1000 * 3600 * 24) + 1);
+        let remainingDays: number = Math.round((endDate.getTime() - nowDate.getTime()) / (1000 * 3600 * 24) + 1);
+        if (remainingDays > 0) {
+            return remainingDays;
+        } else {
+            return 0;
+        }
     }
 
     function getPercentageRemainingTime(startDate: Date, endDate: Date): number {
         let nowDate: Date = new Date();
         let totalDuration: number = endDate.getTime() - startDate.getTime();
         let pastTime: number = nowDate.getTime() - startDate.getTime();
-        return Math.round(pastTime * 100 / totalDuration);
+        if (pastTime < totalDuration) {
+            return Math.round(pastTime * 100 / totalDuration);
+        } else {
+            return 100;
+        }
     }
 
     const remainingDays = getRemainingDays(campaign.startDate, campaign.endDate);
@@ -62,6 +71,15 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                     root: classes.linearProgressRoot,
                     colorPrimary: classes.linearProgressColor,
                 }} />
+            {/* --- Fundings (when finished) --- */}
+            <Box component="div" display={remainingDays > 0 ? "none" : ""}>
+                <Typography variant="h2" component="p">
+                    {campaign.totalAmountRaised + " " + campaign.currencyCode}
+                </Typography>
+                <Typography variant="subtitle2" component="p">
+                    {"raised to support " + campaign.foundation.name}
+                </Typography>
+            </Box>
             {/* --- Days to go --- */}
             <Typography variant="h2" component="p">
                 {remainingDays}
@@ -84,63 +102,59 @@ const CampaignInfo: React.FC<ICampaignInfo> = ({ campaign }) => {
                     : "artist"
                 }
             </Typography>
-            {/* --- Fundings (when finished) --- */}
-            <Typography variant="h2" component="p">
-                {campaign.totalAmountRaised + " " + campaign.currencyCode}
-            </Typography>
-            <Typography variant="subtitle2" component="p">
-                {"raised to support " + campaign.foundation.name}
-            </Typography>
-
-            <Button size="large" variant="contained" color="primary" className={classes.supportBtn} disableElevation href={'#perks'} fullWidth>
-                {"Support This Campaign"}
-            </Button>
-            <Grid container
-                direction="row"
-                justify="center"
-                alignItems="flex-start"
-                spacing={1}>
-                <Grid item xs={3}>
-                    <Button
-                        variant="outlined"
-                        color="secondary"
-                        className={classes.socialBtn}
-                        fullWidth
-                        href={"https://www.facebook.com"} target="_blank" rel="noreferrer">
-                        <Facebook />
-                    </Button>
+            
+            {/* --- Support & Social Btns (only available during the campaign) --- */}
+            <Box component="div" display={remainingDays > 0 ? "" : "none"}>
+                <Button size="large" variant="contained" color="primary" className={classes.supportBtn} disableElevation href={'#perks'} fullWidth>
+                    {"Support This Campaign"}
+                </Button>
+                <Grid container
+                    direction="row"
+                    justify="center"
+                    alignItems="flex-start"
+                    spacing={1}>
+                    <Grid item xs={3}>
+                        <Button
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.socialBtn}
+                            fullWidth
+                            href={"https://www.facebook.com"} target="_blank" rel="noreferrer">
+                            <Facebook />
+                        </Button>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Button
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.socialBtn}
+                            fullWidth
+                            href={"https://www.twitter.com"} target="_blank" rel="noreferrer">
+                            <Twitter />
+                        </Button>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Button
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.socialBtn}
+                            fullWidth
+                            href={"https://www.instagram.com"} target="_blank" rel="noreferrer">
+                            <Instagram />
+                        </Button>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Button
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.socialBtn}
+                            fullWidth
+                            href={"mailto:?subject=Support " + campaign.foundation.name + "!&body=Visit https://ouistitiprint.com to support " + campaign.foundation.name + "!"}>
+                            <Mail />
+                        </Button>
+                    </Grid>
                 </Grid>
-                <Grid item xs={3}>
-                    <Button
-                        variant="outlined"
-                        color="secondary"
-                        className={classes.socialBtn}
-                        fullWidth
-                        href={"https://www.twitter.com"} target="_blank" rel="noreferrer">
-                        <Twitter />
-                    </Button>
-                </Grid>
-                <Grid item xs={3}>
-                    <Button
-                        variant="outlined"
-                        color="secondary"
-                        className={classes.socialBtn}
-                        fullWidth
-                        href={"https://www.instagram.com"} target="_blank" rel="noreferrer">
-                        <Instagram />
-                    </Button>
-                </Grid>
-                <Grid item xs={3}>
-                    <Button
-                        variant="outlined"
-                        color="secondary"
-                        className={classes.socialBtn}
-                        fullWidth
-                        href={"mailto:?subject=Support " + campaign.foundation.name + "!&body=Visit https://ouistitiprint.com to support " + campaign.foundation.name + "!"}>
-                        <Mail />
-                    </Button>
-                </Grid>
-            </Grid>
+            </Box>
             <Typography variant="body1" component="p" className={classes.profitDisclaimer}>
                 {"All the profits from the sales "}
                 {remainingDays > 0
